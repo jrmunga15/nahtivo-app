@@ -1,0 +1,152 @@
+{
+  "brand": {
+    "name": "Nahtivo",
+    "tagline": "Experiences with certified local guides"
+  },
+  "nav": {
+    "catalog": "Experiences",
+    "guides": "Guides"
+  },
+  "home": {
+    "heroTitle": "Discover Ahuachapán with the people who know it best",
+    "heroSubtitle": "Every experience is led by a local guide certified by Nahtivo. You meet the person first, then the experience.",
+    "catalogTitle": "Available experiences",
+    "guidedBy": "Guided by"
+  },
+  "experience": {
+    "yourGuide": "Your guide",
+    "certifiedGuide": "Guide certified by Nahtivo",
+    "priceFrom": "From",
+    "perPerson": "per person",
+    "duration": "Duration",
+    "groupSize": "Group size",
+    "difficulty": "Difficulty",
+    "meetingPoint": "Meeting point",
+    "highlights": "Highlights",
+    "includes": "What's included",
+    "aboutExperience": "About this experience",
+    "backToCatalog": "Back to experiences",
+    "seeFullProfile": "See full guide profile",
+    "people": "people"
+  },
+  "guide": {
+    "certifiedSince": "Certified by Nahtivo since",
+    "languages": "Languages",
+    "about": "About",
+    "specialties": "Specialties",
+    "experiencesOffered": "Experiences by this guide",
+    "yearsGuiding": "years of experience",
+    "backToCatalog": "Back to experiences"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "moderate": "Moderate",
+    "challenging": "Challenging"
+  },
+  "booking": {
+    "title": "Reserve your spot",
+    "dateLabel": "Date",
+    "peopleLabel": "Number of people",
+    "fullNameLabel": "Full name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "notesLabel": "Notes (optional)",
+    "notesPlaceholder": "Allergies, restrictions, anything we should know...",
+    "totalLabel": "Total",
+    "submit": "Confirm booking",
+    "submitting": "Sending...",
+    "successTitle": "Booking received!",
+    "successMessage": "Save this code. Your guide will reach out to confirm the details.",
+    "confirmationCode": "Confirmation code",
+    "newBooking": "Make another booking",
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Enter a valid email",
+      "invalidPhone": "Enter a valid phone number",
+      "invalidDate": "Choose a date starting tomorrow",
+      "maxPeople": "Maximum {max} people for this experience",
+      "minPeople": "Minimum 1 person",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Community tourism in Ahuachapán, El Salvador.",
+    "rights": "All rights reserved."
+  },
+  "landing": {
+    "nav": {
+      "contact": "Contact us"
+    },
+    "hero": {
+      "titleLine1": "The destination,",
+      "titleEmphasis": "told by",
+      "titleLine3": "those who live it",
+      "subtitle": "We connect tourists with certified local guides, businesses with content creators, and communities with knowledge that transforms.",
+      "ctaJoin": "Join now",
+      "ctaContact": "Talk to us",
+      "scrollHint": "Discover"
+    },
+    "gallery": {
+      "centralPark": "Central Park",
+      "parishChurch": "Parish Church",
+      "aerialView": "Aerial View"
+    },
+    "services": {
+      "eyebrow": "Our solution",
+      "title": "Three service lines, one purpose",
+      "tours": {
+        "badge": "Tours — B2C",
+        "title": "Certified local guides",
+        "description": "Book tours in Ahuachapán led by people from the region. Hot springs, waterfalls, coffee and culture. Authentic experiences, not generic ones."
+      },
+      "content": {
+        "badge": "Content — B2B",
+        "title": "Creators for your business",
+        "description": "We connect hotels, restaurants and attractions with photographers and videographers from our local network. Custom packages, quality production."
+      },
+      "academy": {
+        "badge": "Education — EDU",
+        "title": "Academy",
+        "description": "Paid workshops and courses with guest creators who come to Ahuachapán to teach. Personal branding, audiovisual production, social media and more."
+      }
+    },
+    "academyBand": {
+      "titlePrefix": "Nahtivo",
+      "titleEmphasis": "Academy",
+      "description": "We bring the best creators in the country to teach here. Graduates join our B2B creator network, closing the full cycle.",
+      "stats": [
+        { "value": "3", "label": "revenue lines" },
+        { "value": "∞", "label": "local talent" },
+        { "value": "1", "label": "winning destination" }
+      ]
+    },
+    "cta": {
+      "title": "Ready to be part of Nahtivo?",
+      "subtitle": "Whether you're a business looking for creators, a young person eager to learn, a guide seeking certification, or a tourist ready to book, sign up and we'll reach out.",
+      "whatsappLink": "Prefer to talk directly? Message us on WhatsApp"
+    },
+    "subscribe": {
+      "fullNameLabel": "Full name",
+      "emailLabel": "Email",
+      "interestLabel": "I'm interested in...",
+      "interestOptions": {
+        "tourist": "Booking experiences",
+        "guide": "Becoming a certified guide",
+        "business": "Finding content creators",
+        "creator": "Creating content"
+      },
+      "submit": "Join Nahtivo",
+      "submitting": "Sending...",
+      "successTitle": "You're in!",
+      "successMessage": "We'll reach out soon with next steps.",
+      "errors": {
+        "required": "This field is required",
+        "invalidEmail": "Enter a valid email",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "footer": {
+      "location": "Ahuachapán, El Salvador"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #16241d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Paleta de marca Nahtivo */
+  --color-bosque: #0d3d2b;
+  --color-verde: #1a6b47;
+  --color-acento: #2ecc71;
+  --color-sol: #f5a623;
+  --color-rios: #1e6fbf;
+  --color-tronco: #7b4f2e;
+
+  /* Tipografías */
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-karla);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}

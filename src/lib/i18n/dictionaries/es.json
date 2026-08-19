@@ -1,0 +1,152 @@
+{
+  "brand": {
+    "name": "Nahtivo",
+    "tagline": "Experiencias con guías locales certificados"
+  },
+  "nav": {
+    "catalog": "Experiencias",
+    "guides": "Guías"
+  },
+  "home": {
+    "heroTitle": "Descubrí Ahuachapán con quienes mejor lo conocen",
+    "heroSubtitle": "Cada experiencia la lleva un guía local certificado por Nahtivo. Vos primero conocés a la persona, después la experiencia.",
+    "catalogTitle": "Experiencias disponibles",
+    "guidedBy": "Guiado por"
+  },
+  "experience": {
+    "yourGuide": "Tu guía",
+    "certifiedGuide": "Guía certificado por Nahtivo",
+    "priceFrom": "Desde",
+    "perPerson": "por persona",
+    "duration": "Duración",
+    "groupSize": "Tamaño del grupo",
+    "difficulty": "Dificultad",
+    "meetingPoint": "Punto de encuentro",
+    "highlights": "Lo más destacado",
+    "includes": "Qué incluye",
+    "aboutExperience": "Sobre esta experiencia",
+    "backToCatalog": "Volver a experiencias",
+    "seeFullProfile": "Ver perfil completo del guía",
+    "people": "personas"
+  },
+  "guide": {
+    "certifiedSince": "Certificado por Nahtivo desde",
+    "languages": "Idiomas",
+    "about": "Sobre",
+    "specialties": "Especialidades",
+    "experiencesOffered": "Experiencias de este guía",
+    "yearsGuiding": "años de experiencia",
+    "backToCatalog": "Volver a experiencias"
+  },
+  "difficulty": {
+    "easy": "Fácil",
+    "moderate": "Moderada",
+    "challenging": "Exigente"
+  },
+  "booking": {
+    "title": "Reservá tu lugar",
+    "dateLabel": "Fecha",
+    "peopleLabel": "Número de personas",
+    "fullNameLabel": "Nombre completo",
+    "emailLabel": "Correo electrónico",
+    "phoneLabel": "Teléfono",
+    "notesLabel": "Notas (opcional)",
+    "notesPlaceholder": "Alergias, restricciones, algo que debamos saber...",
+    "totalLabel": "Total",
+    "submit": "Confirmar reserva",
+    "submitting": "Enviando...",
+    "successTitle": "¡Reserva recibida!",
+    "successMessage": "Guardá este código. Tu guía se va a poner en contacto para confirmar los detalles.",
+    "confirmationCode": "Código de confirmación",
+    "newBooking": "Hacer otra reserva",
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "invalidEmail": "Ingresá un correo válido",
+      "invalidPhone": "Ingresá un teléfono válido",
+      "invalidDate": "Elegí una fecha a partir de mañana",
+      "maxPeople": "Máximo {max} personas para esta experiencia",
+      "minPeople": "Mínimo 1 persona",
+      "generic": "Algo salió mal. Intentá de nuevo."
+    }
+  },
+  "footer": {
+    "tagline": "Turismo comunitario en Ahuachapán, El Salvador.",
+    "rights": "Todos los derechos reservados."
+  },
+  "landing": {
+    "nav": {
+      "contact": "Contáctanos"
+    },
+    "hero": {
+      "titleLine1": "El destino,",
+      "titleEmphasis": "contado por",
+      "titleLine3": "quienes lo viven",
+      "subtitle": "Conectamos turistas con guías locales certificados, empresas con creadores de contenido, y comunidades con conocimiento que transforma.",
+      "ctaJoin": "Únete ahora",
+      "ctaContact": "Hablar con nosotros",
+      "scrollHint": "Descubre"
+    },
+    "gallery": {
+      "centralPark": "Parque Central",
+      "parishChurch": "Iglesia Parroquial",
+      "aerialView": "Vista Aérea"
+    },
+    "services": {
+      "eyebrow": "Nuestra solución",
+      "title": "Tres líneas de servicio, un mismo propósito",
+      "tours": {
+        "badge": "Tours — B2C",
+        "title": "Guías locales certificados",
+        "description": "Reserva tours en Ahuachapán guiados por personas de la región. Termales, cascadas, café y cultura. Experiencias auténticas, no genéricas."
+      },
+      "content": {
+        "badge": "Contenido — B2B",
+        "title": "Creadores para tu negocio",
+        "description": "Conectamos hoteles, restaurantes y atracciones con fotógrafos y videógrafos de nuestra red local. Paquetes a la medida, producción de calidad."
+      },
+      "academy": {
+        "badge": "Formación — EDU",
+        "title": "Academy",
+        "description": "Talleres y cursos pagados con creadores invitados que vienen a Ahuachapán a enseñar. Marca personal, producción audiovisual, redes sociales y más."
+      }
+    },
+    "academyBand": {
+      "titlePrefix": "Nahtivo",
+      "titleEmphasis": "Academy",
+      "description": "Traemos a los mejores creadores del país para que enseñen aquí. Los egresados se integran a nuestra red de creadores B2B, cerrando el ciclo completo.",
+      "stats": [
+        { "value": "3", "label": "líneas de ingreso" },
+        { "value": "∞", "label": "talento local" },
+        { "value": "1", "label": "destino ganador" }
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para ser parte de Nahtivo?",
+      "subtitle": "Si eres un negocio que busca creadores, un joven que quiere aprender, un guía que quiere certificarse, o un turista que quiere reservar, suscribite y te contactamos.",
+      "whatsappLink": "¿Preferís hablar directo? Escribinos por WhatsApp"
+    },
+    "subscribe": {
+      "fullNameLabel": "Nombre completo",
+      "emailLabel": "Correo electrónico",
+      "interestLabel": "Me interesa...",
+      "interestOptions": {
+        "tourist": "Reservar experiencias",
+        "guide": "Ser guía certificado",
+        "business": "Buscar creadores de contenido",
+        "creator": "Crear contenido"
+      },
+      "submit": "Unirme a Nahtivo",
+      "submitting": "Enviando...",
+      "successTitle": "¡Listo, ya estás dentro!",
+      "successMessage": "Te vamos a escribir pronto con los próximos pasos.",
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "invalidEmail": "Ingresá un correo válido",
+        "generic": "Algo salió mal. Intentá de nuevo."
+      }
+    },
+    "footer": {
+      "location": "Ahuachapán, El Salvador"
+    }
+  }
+}
