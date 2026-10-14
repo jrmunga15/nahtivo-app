@@ -124,10 +124,9 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
             >
               <div className="relative h-[180px] w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80&fit=crop"
+                  src="/landing/tour-guide.jpg"
                   alt=""
                   fill
-                  unoptimized
                   sizes="(min-width: 640px) 33vw, 100vw"
                   className="object-cover"
                 />
@@ -148,10 +147,9 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
             <div className="overflow-hidden rounded-2xl border border-[#D1E8DB] bg-white">
               <div className="relative h-[180px] w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80&fit=crop"
+                  src="/landing/creator.jpg"
                   alt=""
                   fill
-                  unoptimized
                   sizes="(min-width: 640px) 33vw, 100vw"
                   className="object-cover"
                 />
@@ -172,10 +170,9 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
             <div className="overflow-hidden rounded-2xl border border-[#D1E8DB] bg-white">
               <div className="relative h-[180px] w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&fit=crop"
+                  src="/landing/academy.jpg"
                   alt=""
                   fill
-                  unoptimized
                   sizes="(min-width: 640px) 33vw, 100vw"
                   className="object-cover"
                 />
