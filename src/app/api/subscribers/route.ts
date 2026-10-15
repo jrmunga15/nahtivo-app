@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getSupabaseClient } from "@/lib/supabase";
 
 type SubscriberErrors = Partial<
   Record<"fullName" | "email" | "interest", string>
@@ -33,6 +34,17 @@ export async function POST(request: Request) {
 
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
+  }
+
+  const { error: insertError } = await getSupabaseClient()
+    .from("subscribers")
+    .insert({ full_name: fullName, email, interest });
+
+  if (insertError) {
+    return NextResponse.json(
+      { ok: false, errors: {}, error: "insert_failed" },
+      { status: 500 },
+    );
   }
 
   return NextResponse.json({ ok: true });

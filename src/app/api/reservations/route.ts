@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getExperienceBySlug } from "@/data/experiences";
+import { getSupabaseClient } from "@/lib/supabase";
 
 type ReservationErrors = Partial<
   Record<"date" | "people" | "fullName" | "email" | "phone", string>
@@ -26,18 +27,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, errors: {} }, { status: 400 });
   }
 
-  const { experienceSlug, date, people, fullName, email, phone } = body as Record<
-    string,
-    unknown
-  >;
+  const {
+    experienceSlug,
+    locale,
+    date,
+    people,
+    fullName,
+    email,
+    phone,
+    notes,
+  } = body as Record<string, unknown>;
 
   const experience =
-    typeof experienceSlug === "string" ? getExperienceBySlug(experienceSlug) : undefined;
+    typeof experienceSlug === "string"
+      ? getExperienceBySlug(experienceSlug)
+      : undefined;
 
   if (!experience) {
     return NextResponse.json(
       { ok: false, errors: {}, error: "unknown_experience" },
-      { status: 404 }
+      { status: 404 },
     );
   }
 
@@ -70,10 +79,33 @@ export async function POST(request: Request) {
     .toString(36)
     .slice(2, 8)
     .toUpperCase()}`;
+  const totalUSD = experience.priceUSD * peopleCount;
+
+  const { error: insertError } = await getSupabaseClient()
+    .from("reservations")
+    .insert({
+      experience_slug: experience.slug,
+      locale: typeof locale === "string" ? locale : null,
+      reservation_date: date,
+      people: peopleCount,
+      full_name: fullName,
+      email,
+      phone,
+      notes: typeof notes === "string" && notes.length > 0 ? notes : null,
+      confirmation_code: confirmationCode,
+      total_usd: totalUSD,
+    });
+
+  if (insertError) {
+    return NextResponse.json(
+      { ok: false, errors: {}, error: "insert_failed" },
+      { status: 500 },
+    );
+  }
 
   return NextResponse.json({
     ok: true,
     confirmationCode,
-    totalUSD: experience.priceUSD * peopleCount,
+    totalUSD,
   });
 }
