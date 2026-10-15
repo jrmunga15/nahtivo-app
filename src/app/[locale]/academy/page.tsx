@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import LandingNav from "@/components/LandingNav";
-import LandingFooter from "@/components/LandingFooter";
+import SiteFooter from "@/components/SiteFooter";
 import SubscribeForm from "@/components/SubscribeForm";
+import { getSiteNavLinks } from "@/lib/navLinks";
 
 export default async function AcademyPage({
   params,
@@ -20,11 +21,7 @@ export default async function AcademyPage({
       <LandingNav
         locale={locale}
         contactLabel={t.nav.contact}
-        links={[
-          { href: `/${locale}/tours`, label: t.nav.tours },
-          { href: `/${locale}/academy`, label: t.nav.academy },
-          { href: `/${locale}/negocios`, label: t.nav.business },
-        ]}
+        links={getSiteNavLinks(locale, dict)}
       />
 
       <section className="bg-bosque px-6 pt-32 pb-20 sm:px-10">
@@ -69,7 +66,7 @@ export default async function AcademyPage({
         </div>
       </section>
 
-      <LandingFooter dict={dict} />
+      <SiteFooter locale={locale} dict={dict} />
     </div>
   );
 }

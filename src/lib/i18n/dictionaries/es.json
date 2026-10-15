@@ -77,6 +77,73 @@
     "tagline": "Turismo comunitario en Ahuachapán, El Salvador.",
     "rights": "Todos los derechos reservados."
   },
+  "siteFooter": {
+    "exploreTitle": "Explorar",
+    "legalTitle": "Legal",
+    "blog": "Blog",
+    "terms": "Términos y condiciones",
+    "privacy": "Política de privacidad",
+    "followUs": "Seguinos"
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Guías e historias de Ahuachapán",
+    "subtitle": "Recomendaciones reales para planear tu visita.",
+    "readMore": "Leer más",
+    "backToBlog": "Volver al blog",
+    "comingSoonTitle": "Esta guía está en camino",
+    "comingSoonBody": "Estamos terminando esta guía con recomendaciones reales de la zona. Volvé pronto para leerla completa."
+  },
+  "legal": {
+    "terms": {
+      "title": "Términos y condiciones",
+      "updated": "Última actualización: octubre de 2026",
+      "sections": [
+        {
+          "heading": "Sobre Nahtivo",
+          "body": "Nahtivo es una plataforma que conecta a turistas con guías locales certificados en el departamento de Ahuachapán, El Salvador. Al usar este sitio o enviar un formulario de reserva o suscripción, aceptás estos términos."
+        },
+        {
+          "heading": "Cómo funcionan las reservas",
+          "body": "Cuando completás el formulario de reserva, estás enviando una solicitud, no una confirmación automática. El guía o el equipo de Nahtivo se va a poner en contacto con vos (por correo, teléfono o WhatsApp) para confirmar disponibilidad y coordinar el pago. Por ahora, el pago se coordina directamente con el guía y no se procesa dentro del sitio."
+        },
+        {
+          "heading": "Cancelaciones y cambios",
+          "body": "Las políticas de cancelación pueden variar según el guía y la experiencia. Te las vamos a confirmar al momento de coordinar tu reserva."
+        },
+        {
+          "heading": "Responsabilidad",
+          "body": "Las experiencias las brindan guías locales certificados por Nahtivo, pero cada actividad conlleva riesgos propios de hacer turismo al aire libre. Seguí siempre las indicaciones de tu guía."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Si tenés dudas sobre estos términos, escribinos por WhatsApp desde el botón de contacto en el sitio."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "updated": "Última actualización: octubre de 2026",
+      "sections": [
+        {
+          "heading": "Qué datos recopilamos",
+          "body": "Cuando reservás una experiencia o te suscribís, guardamos tu nombre, correo electrónico, teléfono, y los detalles de tu solicitud (fecha, número de personas, notas, o tu interés en el caso de suscripciones)."
+        },
+        {
+          "heading": "Para qué los usamos",
+          "body": "Usamos esos datos únicamente para confirmar tu reserva o suscripción y ponernos en contacto con vos. No vendemos ni compartimos tu información con terceros con fines publicitarios."
+        },
+        {
+          "heading": "Dónde se guardan",
+          "body": "Tus datos se guardan en una base de datos segura (Supabase), a la que solo tiene acceso el equipo de Nahtivo mediante una cuenta protegida con contraseña."
+        },
+        {
+          "heading": "Tus derechos",
+          "body": "Podés pedirnos en cualquier momento que te mostremos, corrijamos o borremos tus datos, escribiéndonos por WhatsApp desde el botón de contacto en el sitio."
+        }
+      ]
+    }
+  },
   "landing": {
     "nav": {
       "contact": "Contáctanos",

@@ -77,6 +77,73 @@
     "tagline": "Community tourism in Ahuachapán, El Salvador.",
     "rights": "All rights reserved."
   },
+  "siteFooter": {
+    "exploreTitle": "Explore",
+    "legalTitle": "Legal",
+    "blog": "Blog",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy Policy",
+    "followUs": "Follow us"
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Guides and stories from Ahuachapán",
+    "subtitle": "Real recommendations to help you plan your visit.",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "comingSoonTitle": "This guide is on its way",
+    "comingSoonBody": "We're putting together this guide with real local recommendations. Check back soon to read it in full."
+  },
+  "legal": {
+    "terms": {
+      "title": "Terms and Conditions",
+      "updated": "Last updated: October 2026",
+      "sections": [
+        {
+          "heading": "About Nahtivo",
+          "body": "Nahtivo is a platform that connects tourists with local guides certified by Nahtivo in the Ahuachapán department of El Salvador. By using this site or submitting a booking or subscription form, you agree to these terms."
+        },
+        {
+          "heading": "How bookings work",
+          "body": "When you complete the booking form, you're sending a request, not an automatic confirmation. The guide or the Nahtivo team will reach out (by email, phone, or WhatsApp) to confirm availability and arrange payment. For now, payment is coordinated directly with the guide and is not processed through the site."
+        },
+        {
+          "heading": "Cancellations and changes",
+          "body": "Cancellation policies may vary by guide and experience. We'll confirm them with you when coordinating your booking."
+        },
+        {
+          "heading": "Liability",
+          "body": "Experiences are led by local guides certified by Nahtivo, but every activity carries the risks inherent to outdoor tourism. Always follow your guide's instructions."
+        },
+        {
+          "heading": "Contact",
+          "body": "If you have questions about these terms, message us on WhatsApp using the contact button on the site."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: October 2026",
+      "sections": [
+        {
+          "heading": "What data we collect",
+          "body": "When you book an experience or subscribe, we store your name, email, phone number, and the details of your request (date, number of people, notes, or your interest in the case of subscriptions)."
+        },
+        {
+          "heading": "What we use it for",
+          "body": "We use this data only to confirm your booking or subscription and to get in touch with you. We do not sell or share your information with third parties for advertising purposes."
+        },
+        {
+          "heading": "Where it's stored",
+          "body": "Your data is stored in a secure database (Supabase), accessible only to the Nahtivo team through a password-protected account."
+        },
+        {
+          "heading": "Your rights",
+          "body": "You can ask us at any time to show you, correct, or delete your data by messaging us on WhatsApp using the contact button on the site."
+        }
+      ]
+    }
+  },
   "landing": {
     "nav": {
       "contact": "Contact us",

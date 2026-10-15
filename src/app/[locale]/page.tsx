@@ -7,9 +7,10 @@ import { categories, getExperienceBySlug } from "@/data/experiences";
 import { getGuideBySlug } from "@/data/guides";
 import { brandColorClasses } from "@/lib/colors";
 import LandingNav from "@/components/LandingNav";
-import LandingFooter from "@/components/LandingFooter";
+import SiteFooter from "@/components/SiteFooter";
 import SubscribeForm from "@/components/SubscribeForm";
 import ExperienceCard from "@/components/ExperienceCard";
+import { getSiteNavLinks } from "@/lib/navLinks";
 
 const featuredSlugs = [
   "sendero-el-imposible",
@@ -41,11 +42,7 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
       <LandingNav
         locale={locale}
         contactLabel={t.nav.contact}
-        links={[
-          { href: `/${locale}/tours`, label: t.nav.tours },
-          { href: `/${locale}/academy`, label: t.nav.academy },
-          { href: `/${locale}/negocios`, label: t.nav.business },
-        ]}
+        links={getSiteNavLinks(locale, dict)}
       />
 
       {/* HERO */}
@@ -196,7 +193,7 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
         </div>
       </section>
 
-      <LandingFooter dict={dict} />
+      <SiteFooter locale={locale} dict={dict} />
     </div>
   );
 }

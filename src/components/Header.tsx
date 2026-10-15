@@ -34,6 +34,12 @@ export default function Header({
           >
             {dict.nav.catalog}
           </Link>
+          <Link
+            href={`/${locale}/blog`}
+            className="hidden text-sm font-semibold text-bosque hover:text-verde sm:inline"
+          >
+            {dict.siteFooter.blog}
+          </Link>
           <LanguageSwitcher locale={locale} />
         </nav>
       </div>
