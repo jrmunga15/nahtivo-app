@@ -32,18 +32,22 @@ export default function SiteFooter({
               <p className="mb-2 text-xs font-bold tracking-wide text-white/40 uppercase">
                 {t.followUs}
               </p>
-              <div className="flex flex-wrap gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.href}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold text-acento hover:underline"
-                  >
-                    {social.name}
-                  </a>
-                ))}
+              <div className="flex flex-wrap gap-2">
+                {socialLinks.map((social) => {
+                  const isExternal = social.href.startsWith("http");
+                  return (
+                    <a
+                      key={social.href}
+                      href={social.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      className="flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5 text-xs font-semibold text-white/80 transition-colors hover:border-acento hover:text-acento"
+                    >
+                      <span aria-hidden>{social.icon}</span>
+                      {social.name}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           )}
