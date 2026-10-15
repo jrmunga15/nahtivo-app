@@ -34,3 +34,12 @@ create policy "Allow public inserts" on reservations
 create policy "Allow public inserts" on subscribers
   for insert to anon
   with check (true);
+
+-- Admin panel: only signed-in Supabase Auth users can read the data.
+create policy "Allow authenticated read" on reservations
+  for select to authenticated
+  using (true);
+
+create policy "Allow authenticated read" on subscribers
+  for select to authenticated
+  using (true);
