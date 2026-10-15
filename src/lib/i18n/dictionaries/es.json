@@ -11,7 +11,8 @@
     "heroTitle": "Descubrí Ahuachapán con quienes mejor lo conocen",
     "heroSubtitle": "Cada experiencia la lleva un guía local certificado por Nahtivo. Vos primero conocés a la persona, después la experiencia.",
     "catalogTitle": "Experiencias disponibles",
-    "guidedBy": "Guiado por"
+    "guidedBy": "Guiado por",
+    "allFilter": "Todos"
   },
   "experience": {
     "yourGuide": "Tu guía",
@@ -86,10 +87,12 @@
       "ctaContact": "Hablar con nosotros",
       "scrollHint": "Descubre"
     },
-    "gallery": {
-      "centralPark": "Parque Central",
-      "parishChurch": "Iglesia Parroquial",
-      "aerialView": "Vista Aérea"
+    "categories": {
+      "title": "Explorá por tipo de experiencia"
+    },
+    "featured": {
+      "title": "Experiencias destacadas",
+      "cta": "Ver todas las experiencias"
     },
     "services": {
       "eyebrow": "Nuestra solución",

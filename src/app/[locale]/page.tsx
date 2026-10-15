@@ -3,8 +3,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { categories, getExperienceBySlug } from "@/data/experiences";
+import { getGuideBySlug } from "@/data/guides";
+import { brandColorClasses } from "@/lib/colors";
 import LandingNav from "@/components/LandingNav";
 import SubscribeForm from "@/components/SubscribeForm";
+import ExperienceCard from "@/components/ExperienceCard";
+
+const featuredSlugs = [
+  "sendero-el-imposible",
+  "murales-arte-ataco",
+  "ausoles-santa-teresa",
+];
 
 const whatsapp = "https://wa.me/50370658859";
 
@@ -14,6 +24,16 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
 
   const dict = await getDictionary(locale);
   const t = dict.landing;
+
+  const featured = featuredSlugs
+    .map((slug) => {
+      const experience = getExperienceBySlug(slug);
+      const guide = experience
+        ? getGuideBySlug(experience.guideSlug)
+        : undefined;
+      return experience && guide ? { experience, guide } : null;
+    })
+    .filter((item) => item !== null);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -66,46 +86,63 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
         </div>
       </section>
 
-      {/* GALLERY */}
-      <div className="grid grid-cols-2 sm:grid-cols-[1.5fr_1fr_1fr]">
-        {[
-          {
-            src: "/landing/foto1.jpg",
-            label: t.gallery.centralPark,
-            span: true,
-          },
-          {
-            src: "/landing/foto2.jpg",
-            label: t.gallery.parishChurch,
-            span: false,
-          },
-          {
-            src: "/landing/foto3.jpg",
-            label: t.gallery.aerialView,
-            span: false,
-          },
-        ].map((item) => (
-          <div
-            key={item.src}
-            className={`group relative h-[180px] overflow-hidden sm:h-[360px] ${
-              item.span ? "col-span-2 h-[220px] sm:col-span-1 sm:h-[360px]" : ""
-            }`}
-          >
-            <Image
-              src={item.src}
-              alt={item.label}
-              fill
-              sizes="(min-width: 640px) 33vw, 50vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-bosque/85 to-transparent px-5 pt-6 pb-3">
-              <span className="text-xs font-bold tracking-[0.12em] text-white uppercase">
-                {item.label}
-              </span>
-            </div>
+      {/* CATEGORIES */}
+      <section className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-10">
+        <h2 className="mb-6 font-heading text-2xl font-bold text-bosque sm:text-3xl">
+          {t.categories.title}
+        </h2>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {categories.map((c) => {
+            const color = brandColorClasses[c.color];
+            return (
+              <Link
+                key={c.slug}
+                href={`/${locale}/tours?category=${c.slug}`}
+                className="group overflow-hidden rounded-2xl border border-bosque/10 transition-shadow hover:shadow-lg"
+              >
+                <div
+                  className={`flex h-24 items-center justify-center text-4xl ${color.bg}`}
+                >
+                  <span aria-hidden>{c.emoji}</span>
+                </div>
+                <div className="bg-white p-3 text-center">
+                  <span className="text-sm font-semibold text-bosque">
+                    {c.category[locale]}
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* FEATURED EXPERIENCES */}
+      <section className="bg-[#F4FAF7]">
+        <div className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-10">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+            <h2 className="font-heading text-2xl font-bold text-bosque sm:text-3xl">
+              {t.featured.title}
+            </h2>
+            <Link
+              href={`/${locale}/tours`}
+              className="text-sm font-semibold text-verde hover:underline"
+            >
+              {t.featured.cta} →
+            </Link>
           </div>
-        ))}
-      </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map(({ experience, guide }) => (
+              <ExperienceCard
+                key={experience.slug}
+                experience={experience}
+                guide={guide}
+                locale={locale}
+                dict={dict}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES */}
       <section id="servicios" className="bg-[#F4FAF7]">

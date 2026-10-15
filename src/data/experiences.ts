@@ -10,6 +10,7 @@ export type Experience = {
   shortDescription: LocalizedText;
   description: LocalizedText;
   category: LocalizedText;
+  categorySlug: string;
   emoji: string;
   color: BrandColor;
   priceUSD: number;
@@ -39,6 +40,7 @@ export const experiences: Experience[] = [
       en: "We enter El Imposible National Park along quiet trails, with stops at viewpoints and a waterfall where you can cool off. Marta knows the names of almost every bird and plant we'll encounter, and shares stories from the families living around the park.",
     },
     category: { es: "Naturaleza", en: "Nature" },
+    categorySlug: "naturaleza",
     emoji: "🥾",
     color: "verde",
     priceUSD: 35,
@@ -83,6 +85,7 @@ export const experiences: Experience[] = [
       en: "Laguna Verde is one of the best-kept secrets of the Flower Route. Willy takes you up the ascent trail explaining the area's volcanic activity, all the way to the crater rim where you'll see the lagoon from above.",
     },
     category: { es: "Volcanes", en: "Volcanoes" },
+    categorySlug: "volcanes",
     emoji: "🌋",
     color: "bosque",
     priceUSD: 40,
@@ -127,6 +130,7 @@ export const experiences: Experience[] = [
       en: "Ataco is famous for its colorful murals and artist community. Reina takes you street by street, telling the story behind each mural and introducing you to artisans working with clay, wood, and textiles in their own workshops.",
     },
     category: { es: "Cultura", en: "Culture" },
+    categorySlug: "cultura",
     emoji: "🖼️",
     color: "sol",
     priceUSD: 20,
@@ -174,6 +178,7 @@ export const experiences: Experience[] = [
       en: "Ahuachapán is the land of ausoles: volcanic steam fumaroles that rise straight from the ground. Willy explains how they form and why they're the basis of the country's geothermal energy, and we close the tour with a relaxing soak in natural hot springs.",
     },
     category: { es: "Aguas termales", en: "Hot springs" },
+    categorySlug: "aguas-termales",
     emoji: "♨️",
     color: "rios",
     priceUSD: 30,
@@ -218,6 +223,7 @@ export const experiences: Experience[] = [
       en: "We tour a high-altitude coffee farm in Apaneca, from the plant to the roast. Reina, who comes from a coffee-growing family, teaches you how to cup coffee and explains why this region produces some of the best beans in Central America.",
     },
     category: { es: "Café", en: "Coffee" },
+    categorySlug: "cafe",
     emoji: "☕",
     color: "tronco",
     priceUSD: 25,
@@ -254,3 +260,17 @@ export const getExperienceBySlug = (slug: string) =>
 
 export const getExperiencesByGuide = (guideSlug: string) =>
   experiences.filter((experience) => experience.guideSlug === guideSlug);
+
+export const categories = experiences.reduce<
+  { slug: string; category: LocalizedText; emoji: string; color: BrandColor }[]
+>((acc, experience) => {
+  if (!acc.some((c) => c.slug === experience.categorySlug)) {
+    acc.push({
+      slug: experience.categorySlug,
+      category: experience.category,
+      emoji: experience.emoji,
+      color: experience.color,
+    });
+  }
+  return acc;
+}, []);
