@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Experience } from "@/data/experiences";
 import type { Guide } from "@/data/guides";
@@ -23,10 +24,20 @@ export default function ExperienceCard({
       href={`/${locale}/experiencias/${experience.slug}`}
       className="group flex flex-col overflow-hidden rounded-2xl border border-bosque/10 bg-white shadow-sm transition-shadow hover:shadow-lg"
     >
-      <div
-        className={`flex h-40 items-center justify-center text-6xl ${color.bg}`}
-      >
-        <span aria-hidden>{experience.emoji}</span>
+      <div className={`relative h-40 ${color.bg}`}>
+        <Image
+          src={experience.image}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover"
+        />
+        <span
+          className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-lg shadow"
+          aria-hidden
+        >
+          {experience.emoji}
+        </span>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">
         <span

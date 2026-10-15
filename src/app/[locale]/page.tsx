@@ -109,10 +109,20 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
                 href={`/${locale}/tours?category=${c.slug}`}
                 className="group overflow-hidden rounded-2xl border border-bosque/10 transition-shadow hover:shadow-lg"
               >
-                <div
-                  className={`flex h-24 items-center justify-center text-4xl ${color.bg}`}
-                >
-                  <span aria-hidden>{c.emoji}</span>
+                <div className={`relative h-24 ${color.bg}`}>
+                  <Image
+                    src={c.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <span
+                    className="absolute right-1.5 bottom-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-sm shadow"
+                    aria-hidden
+                  >
+                    {c.emoji}
+                  </span>
                 </div>
                 <div className="bg-white p-3 text-center">
                   <span className="text-sm font-semibold text-bosque">

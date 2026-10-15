@@ -14,6 +14,7 @@ export type Experience = {
   city: LocalizedText;
   citySlug: string;
   emoji: string;
+  image: string;
   color: BrandColor;
   priceUSD: number;
   durationHours: number;
@@ -46,6 +47,7 @@ export const experiences: Experience[] = [
     city: { es: "Tacuba", en: "Tacuba" },
     citySlug: "tacuba",
     emoji: "🥾",
+    image: "/experiences/sendero-el-imposible.jpg",
     color: "verde",
     priceUSD: 35,
     durationHours: 5,
@@ -93,6 +95,7 @@ export const experiences: Experience[] = [
     city: { es: "Apaneca", en: "Apaneca" },
     citySlug: "apaneca",
     emoji: "🌋",
+    image: "/experiences/laguna-verde-trek.jpg",
     color: "bosque",
     priceUSD: 40,
     durationHours: 4,
@@ -140,6 +143,7 @@ export const experiences: Experience[] = [
     city: { es: "Concepción de Ataco", en: "Concepción de Ataco" },
     citySlug: "ataco",
     emoji: "🖼️",
+    image: "/experiences/murales-arte-ataco.jpg",
     color: "sol",
     priceUSD: 20,
     durationHours: 2.5,
@@ -190,6 +194,7 @@ export const experiences: Experience[] = [
     city: { es: "Ahuachapán", en: "Ahuachapán" },
     citySlug: "ahuachapan",
     emoji: "♨️",
+    image: "/experiences/ausoles-santa-teresa.jpg",
     color: "rios",
     priceUSD: 30,
     durationHours: 3,
@@ -237,6 +242,7 @@ export const experiences: Experience[] = [
     city: { es: "Apaneca", en: "Apaneca" },
     citySlug: "apaneca",
     emoji: "☕",
+    image: "/experiences/ruta-del-cafe-apaneca.jpg",
     color: "tronco",
     priceUSD: 25,
     durationHours: 3,
@@ -284,6 +290,7 @@ export const experiences: Experience[] = [
     city: { es: "Tacuba", en: "Tacuba" },
     citySlug: "tacuba",
     emoji: "💦",
+    image: "/experiences/siete-cascadas-tacuba.jpg",
     color: "verde",
     priceUSD: 30,
     durationHours: 4,
@@ -335,6 +342,7 @@ export const experiences: Experience[] = [
     city: { es: "Apaneca", en: "Apaneca" },
     citySlug: "apaneca",
     emoji: "🚡",
+    image: "/experiences/tirolesa-apaneca.jpg",
     color: "bosque",
     priceUSD: 25,
     durationHours: 1.5,
@@ -382,6 +390,7 @@ export const experiences: Experience[] = [
     city: { es: "Barra de Santiago", en: "Barra de Santiago" },
     citySlug: "barra-de-santiago",
     emoji: "🐢",
+    image: "/experiences/manglares-barra-de-santiago.jpg",
     color: "rios",
     priceUSD: 30,
     durationHours: 4,
@@ -432,6 +441,7 @@ export const experiences: Experience[] = [
     city: { es: "Apaneca", en: "Apaneca" },
     citySlug: "apaneca",
     emoji: "🐴",
+    image: "/experiences/cabalgata-cafetales-apaneca.jpg",
     color: "tronco",
     priceUSD: 28,
     durationHours: 2.5,
@@ -469,13 +479,20 @@ export const getExperiencesByGuide = (guideSlug: string) =>
   experiences.filter((experience) => experience.guideSlug === guideSlug);
 
 export const categories = experiences.reduce<
-  { slug: string; category: LocalizedText; emoji: string; color: BrandColor }[]
+  {
+    slug: string;
+    category: LocalizedText;
+    emoji: string;
+    image: string;
+    color: BrandColor;
+  }[]
 >((acc, experience) => {
   if (!acc.some((c) => c.slug === experience.categorySlug)) {
     acc.push({
       slug: experience.categorySlug,
       category: experience.category,
       emoji: experience.emoji,
+      image: experience.image,
       color: experience.color,
     });
   }

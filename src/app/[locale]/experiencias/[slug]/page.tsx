@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/i18n/config";
@@ -39,9 +40,22 @@ export default async function ExperiencePage({
         </Link>
 
         <div
-          className={`mt-4 flex h-48 items-center justify-center rounded-2xl text-8xl ${color.bg}`}
+          className={`relative mt-4 h-64 overflow-hidden rounded-2xl ${color.bg}`}
         >
-          <span aria-hidden>{experience.emoji}</span>
+          <Image
+            src={experience.image}
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 768px) 768px, 100vw"
+            className="object-cover"
+          />
+          <span
+            className="absolute right-4 bottom-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-2xl shadow"
+            aria-hidden
+          >
+            {experience.emoji}
+          </span>
         </div>
 
         <span
