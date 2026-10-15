@@ -11,6 +11,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SubscribeForm from "@/components/SubscribeForm";
 import ExperienceCard from "@/components/ExperienceCard";
 import { getSiteNavLinks } from "@/lib/navLinks";
+import { getCurrentUser } from "@/lib/account";
 
 const featuredSlugs = [
   "sendero-el-imposible",
@@ -26,6 +27,11 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
 
   const dict = await getDictionary(locale);
   const t = dict.landing;
+
+  const { user } = await getCurrentUser();
+  const accountLink = user
+    ? { href: `/${locale}/cuenta`, label: dict.nav.myAccount }
+    : { href: `/${locale}/cuenta/ingresar`, label: dict.nav.logIn };
 
   const featured = featuredSlugs
     .map((slug) => {
@@ -43,6 +49,7 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
         locale={locale}
         contactLabel={t.nav.contact}
         links={getSiteNavLinks(locale, dict)}
+        accountLink={accountLink}
       />
 
       {/* HERO */}

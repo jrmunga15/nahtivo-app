@@ -10,6 +10,7 @@ import GuideHighlight from "@/components/GuideHighlight";
 import BookingForm from "@/components/BookingForm";
 import AppShell from "@/components/AppShell";
 import ExperienceCardActions from "@/components/ExperienceCardActions";
+import { getCurrentUser } from "@/lib/account";
 
 export function generateStaticParams() {
   return experiences.map((experience) => ({ slug: experience.slug }));
@@ -30,6 +31,7 @@ export default async function ExperiencePage({
   const dict = await getDictionary(locale);
   const color = brandColorClasses[experience.color];
   const detailPath = `/${locale}/experiencias/${experience.slug}`;
+  const { user, profile } = await getCurrentUser();
 
   const stats = [
     {
@@ -193,11 +195,41 @@ export default async function ExperiencePage({
             </div>
 
             <div className="mt-4">
-              <BookingForm
-                experience={experience}
-                locale={locale}
-                dict={dict}
-              />
+              {user ? (
+                <BookingForm
+                  experience={experience}
+                  locale={locale}
+                  dict={dict}
+                  account={{
+                    email: user.email ?? "",
+                    fullName: profile?.full_name ?? "",
+                    phone: profile?.phone ?? "",
+                  }}
+                />
+              ) : (
+                <div className="rounded-2xl border border-bosque/10 bg-white p-6 text-center">
+                  <p className="font-heading text-lg font-bold text-bosque">
+                    {dict.account.bookingGate.title}
+                  </p>
+                  <p className="mt-2 text-sm text-bosque/70">
+                    {dict.account.bookingGate.body}
+                  </p>
+                  <div className="mt-5 flex flex-col gap-2">
+                    <Link
+                      href={`/${locale}/cuenta/ingresar?redirect=${encodeURIComponent(detailPath)}`}
+                      className="rounded-full bg-acento px-6 py-3 text-sm font-semibold text-bosque transition-opacity hover:opacity-90"
+                    >
+                      {dict.account.bookingGate.logInCta}
+                    </Link>
+                    <Link
+                      href={`/${locale}/cuenta/registro?redirect=${encodeURIComponent(detailPath)}`}
+                      className="rounded-full border border-bosque/20 px-6 py-3 text-sm font-semibold text-bosque hover:bg-bosque/5"
+                    >
+                      {dict.account.bookingGate.signUpCta}
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

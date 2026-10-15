@@ -9,12 +9,17 @@ type FieldErrors = Partial<
   Record<"date" | "people" | "fullName" | "email" | "phone", string>
 >;
 
+type Account = {
+  email: string;
+  fullName: string;
+  phone: string;
+};
+
 type Confirmation = {
   code: string;
   totalUSD: number;
 };
 
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^[0-9+()\s-]{7,}$/;
 
 function tomorrowISODate() {
@@ -27,19 +32,20 @@ export default function BookingForm({
   experience,
   locale,
   dict,
+  account,
 }: {
   experience: Experience;
   locale: Locale;
   dict: Dictionary;
+  account: Account;
 }) {
   const t = dict.booking;
   const minDate = tomorrowISODate();
 
   const [date, setDate] = useState("");
   const [people, setPeople] = useState(1);
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [fullName, setFullName] = useState(account.fullName);
+  const [phone, setPhone] = useState(account.phone);
   const [notes, setNotes] = useState("");
 
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -61,7 +67,6 @@ export default function BookingForm({
     if (!Number.isInteger(people) || people < 1) next.people = "minPeople";
     else if (people > experience.groupSizeMax) next.people = "maxPeople";
     if (fullName.trim().length === 0) next.fullName = "required";
-    if (!emailPattern.test(email)) next.email = "invalidEmail";
     if (!phonePattern.test(phone)) next.phone = "invalidPhone";
 
     return next;
@@ -86,7 +91,6 @@ export default function BookingForm({
           date,
           people,
           fullName,
-          email,
           phone,
           notes,
         }),
@@ -114,9 +118,8 @@ export default function BookingForm({
     setConfirmation(null);
     setDate("");
     setPeople(1);
-    setFullName("");
-    setEmail("");
-    setPhone("");
+    setFullName(account.fullName);
+    setPhone(account.phone);
     setNotes("");
     setErrors({});
   };
@@ -221,16 +224,12 @@ export default function BookingForm({
           <label className={labelClass} htmlFor="booking-email">
             {t.emailLabel}
           </label>
-          <input
+          <p
             id="booking-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={inputClass}
-          />
-          {errorMessage("email") && (
-            <p className={errorClass}>{errorMessage("email")}</p>
-          )}
+            className="rounded-lg bg-bosque/5 px-3 py-2 text-sm text-bosque/60"
+          >
+            {account.email}
+          </p>
         </div>
 
         <div>
@@ -264,9 +263,7 @@ export default function BookingForm({
         />
       </div>
 
-      {genericError && (
-        <p className={`mt-4 ${errorClass}`}>{genericError}</p>
-      )}
+      {genericError && <p className={`mt-4 ${errorClass}`}>{genericError}</p>}
 
       <div className="mt-6 flex items-center justify-between rounded-xl bg-bosque/5 px-4 py-3">
         <span className="text-sm font-semibold text-bosque/70">

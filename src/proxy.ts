@@ -33,23 +33,48 @@ export async function proxy(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   const { pathname } = request.nextUrl;
+  const isAdminPath = pathname.startsWith("/admin");
   const isLoginPage = pathname === "/admin/login";
 
-  if (!user && !isLoginPage) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/admin/login";
-    return NextResponse.redirect(url);
-  }
+  if (isAdminPath) {
+    if (!user && !isLoginPage) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin/login";
+      return NextResponse.redirect(url);
+    }
 
-  if (user && isLoginPage) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/admin";
-    return NextResponse.redirect(url);
+    if (user && !isLoginPage) {
+      // Any Nahtivo customer can now be a signed-in Supabase Auth user, so
+      // being logged in is no longer enough to reach /admin — only profiles
+      // flagged is_admin may.
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("is_admin")
+        .eq("id", user.id)
+        .single();
+
+      if (!profile?.is_admin) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/";
+        return NextResponse.redirect(url);
+      }
+    }
+
+    if (user && isLoginPage) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin";
+      return NextResponse.redirect(url);
+    }
   }
 
   return response;
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  // Runs on every page (except static assets) so Supabase session cookies
+  // get refreshed everywhere, not just under /admin — otherwise customer
+  // sessions on /cuenta and booking pages would silently expire.
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|webp|gif|ico)$).*)",
+  ],
 };

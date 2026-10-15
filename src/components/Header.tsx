@@ -4,8 +4,10 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { Locale } from "@/lib/i18n/config";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { getSiteNavLinks } from "@/lib/navLinks";
+import { getCurrentUser } from "@/lib/account";
+import { signOutCustomer } from "@/lib/account-actions";
 
-export default function Header({
+export default async function Header({
   locale,
   dict,
 }: {
@@ -13,6 +15,7 @@ export default function Header({
   dict: Dictionary;
 }) {
   const links = getSiteNavLinks(locale, dict);
+  const { user } = await getCurrentUser();
 
   return (
     <header className="sticky top-0 z-10 border-b border-bosque/10 bg-white/90 backdrop-blur">
@@ -48,6 +51,34 @@ export default function Header({
           >
             {dict.nav.catalog}
           </Link>
+
+          {user ? (
+            <div className="flex items-center gap-3">
+              <Link
+                href={`/${locale}/cuenta`}
+                className="text-sm font-semibold text-bosque hover:text-verde"
+              >
+                {dict.nav.myAccount}
+              </Link>
+              <form action={signOutCustomer}>
+                <input type="hidden" name="locale" value={locale} />
+                <button
+                  type="submit"
+                  className="hidden text-sm font-semibold text-bosque/50 hover:text-bosque sm:inline"
+                >
+                  {dict.nav.logOut}
+                </button>
+              </form>
+            </div>
+          ) : (
+            <Link
+              href={`/${locale}/cuenta/ingresar`}
+              className="rounded-full bg-verde px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+            >
+              {dict.nav.logIn}
+            </Link>
+          )}
+
           <LanguageSwitcher locale={locale} />
         </nav>
       </div>

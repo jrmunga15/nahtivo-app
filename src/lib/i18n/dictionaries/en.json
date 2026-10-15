@@ -5,7 +5,10 @@
   },
   "nav": {
     "catalog": "Experiences",
-    "guides": "Guides"
+    "guides": "Guides",
+    "myAccount": "My account",
+    "logIn": "Log in",
+    "logOut": "Log out"
   },
   "home": {
     "heroTitle": "The destination,\ntold by\nthose who live it",
@@ -79,6 +82,63 @@
       "maxPeople": "Maximum {max} people for this experience",
       "minPeople": "Minimum 1 person",
       "generic": "Something went wrong. Please try again."
+    }
+  },
+  "account": {
+    "signUp": {
+      "title": "Create your account",
+      "subtitle": "Save your details and your reservation history.",
+      "fullNameLabel": "Full name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm your password",
+      "submit": "Create account",
+      "submitting": "Creating account...",
+      "haveAccount": "Already have an account?",
+      "logInLink": "Log in here",
+      "checkEmailTitle": "Check your email",
+      "checkEmailBody": "We sent you a link to confirm your account before you can log in.",
+      "errors": {
+        "required": "This field is required",
+        "invalidEmail": "Enter a valid email",
+        "invalidPhone": "Enter a valid phone number",
+        "shortPassword": "Password must be at least 8 characters",
+        "passwordMismatch": "Passwords don't match",
+        "emailInUse": "An account with that email already exists",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "signIn": {
+      "title": "Log in to your account",
+      "subtitle": "To book and see your history.",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Log in",
+      "submitting": "Logging in...",
+      "noAccount": "Don't have an account yet?",
+      "signUpLink": "Sign up here",
+      "errors": {
+        "invalidCredentials": "Incorrect email or password",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "dashboard": {
+      "title": "My account",
+      "profileTitle": "Your details",
+      "editProfile": "Save changes",
+      "savingProfile": "Saving...",
+      "profileSaved": "Details updated.",
+      "reservationsTitle": "Your reservations",
+      "noReservations": "You don't have any reservations yet.",
+      "exploreCta": "See experiences",
+      "logOut": "Log out"
+    },
+    "bookingGate": {
+      "title": "Log in to book",
+      "body": "Create an account or log in to complete this reservation. That way we keep your history and make sure everything goes through Nahtivo.",
+      "logInCta": "Log in",
+      "signUpCta": "Create account"
     }
   },
   "footer": {

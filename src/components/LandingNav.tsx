@@ -10,10 +10,12 @@ export default function LandingNav({
   locale,
   contactLabel,
   links,
+  accountLink,
 }: {
   locale: Locale;
   contactLabel: string;
   links: { href: string; label: string }[];
+  accountLink: { href: string; label: string };
 }) {
   const [scrolled, setScrolled] = useState(false);
 
@@ -52,6 +54,12 @@ export default function LandingNav({
         ))}
       </div>
       <div className="flex items-center gap-4">
+        <Link
+          href={accountLink.href}
+          className="hidden text-sm font-semibold text-white/80 transition-colors hover:text-white sm:inline"
+        >
+          {accountLink.label}
+        </Link>
         <LanguageSwitcher locale={locale} variant="dark" />
         <a
           href="https://wa.me/50370658859"

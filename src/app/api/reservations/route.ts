@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import { getExperienceBySlug } from "@/data/experiences";
-import { getSupabaseClient } from "@/lib/supabase";
+import { createServerSupabaseClient } from "@/lib/supabase-server";
 
 type ReservationErrors = Partial<
-  Record<"date" | "people" | "fullName" | "email" | "phone", string>
+  Record<"date" | "people" | "fullName" | "phone", string>
 >;
 
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^[0-9+()\s-]{7,}$/;
 
 function isFutureDate(value: string) {
@@ -21,22 +20,26 @@ function isFutureDate(value: string) {
 }
 
 export async function POST(request: Request) {
+  const supabase = await createServerSupabaseClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return NextResponse.json(
+      { ok: false, errors: {}, error: "unauthenticated" },
+      { status: 401 },
+    );
+  }
+
   const body = await request.json().catch(() => null);
 
   if (!body || typeof body !== "object") {
     return NextResponse.json({ ok: false, errors: {} }, { status: 400 });
   }
 
-  const {
-    experienceSlug,
-    locale,
-    date,
-    people,
-    fullName,
-    email,
-    phone,
-    notes,
-  } = body as Record<string, unknown>;
+  const { experienceSlug, locale, date, people, fullName, phone, notes } =
+    body as Record<string, unknown>;
 
   const experience =
     typeof experienceSlug === "string"
@@ -64,9 +67,6 @@ export async function POST(request: Request) {
   if (typeof fullName !== "string" || fullName.trim().length === 0) {
     errors.fullName = "required";
   }
-  if (typeof email !== "string" || !emailPattern.test(email)) {
-    errors.email = "invalidEmail";
-  }
   if (typeof phone !== "string" || !phonePattern.test(phone)) {
     errors.phone = "invalidPhone";
   }
@@ -81,20 +81,19 @@ export async function POST(request: Request) {
     .toUpperCase()}`;
   const totalUSD = experience.priceUSD * peopleCount;
 
-  const { error: insertError } = await getSupabaseClient()
-    .from("reservations")
-    .insert({
-      experience_slug: experience.slug,
-      locale: typeof locale === "string" ? locale : null,
-      reservation_date: date,
-      people: peopleCount,
-      full_name: fullName,
-      email,
-      phone,
-      notes: typeof notes === "string" && notes.length > 0 ? notes : null,
-      confirmation_code: confirmationCode,
-      total_usd: totalUSD,
-    });
+  const { error: insertError } = await supabase.from("reservations").insert({
+    experience_slug: experience.slug,
+    locale: typeof locale === "string" ? locale : null,
+    reservation_date: date,
+    people: peopleCount,
+    full_name: fullName,
+    email: user.email,
+    phone,
+    notes: typeof notes === "string" && notes.length > 0 ? notes : null,
+    confirmation_code: confirmationCode,
+    total_usd: totalUSD,
+    user_id: user.id,
+  });
 
   if (insertError) {
     return NextResponse.json(
