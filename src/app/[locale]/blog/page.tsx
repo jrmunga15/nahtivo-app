@@ -4,9 +4,7 @@ import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { blogPosts } from "@/data/blog";
-import LandingNav from "@/components/LandingNav";
-import SiteFooter from "@/components/SiteFooter";
-import { getSiteNavLinks } from "@/lib/navLinks";
+import AppShell from "@/components/AppShell";
 
 export default async function BlogPage({
   params,
@@ -18,14 +16,8 @@ export default async function BlogPage({
   const t = dict.blog;
 
   return (
-    <div className="flex flex-1 flex-col">
-      <LandingNav
-        locale={locale}
-        contactLabel={dict.landing.nav.contact}
-        links={getSiteNavLinks(locale, dict)}
-      />
-
-      <section className="bg-bosque px-6 pt-32 pb-16 text-center sm:px-10">
+    <AppShell locale={locale} dict={dict}>
+      <section className="bg-bosque px-6 pt-16 pb-16 text-center sm:px-10">
         <p className="mb-3 text-xs font-bold tracking-[0.18em] text-acento uppercase">
           {t.eyebrow}
         </p>
@@ -68,8 +60,6 @@ export default async function BlogPage({
           ))}
         </div>
       </section>
-
-      <SiteFooter locale={locale} dict={dict} />
-    </div>
+    </AppShell>
   );
 }

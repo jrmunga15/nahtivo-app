@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import LandingNav from "@/components/LandingNav";
-import SiteFooter from "@/components/SiteFooter";
+import AppShell from "@/components/AppShell";
 import SubscribeForm from "@/components/SubscribeForm";
-import { getSiteNavLinks } from "@/lib/navLinks";
 
 export default async function BusinessPage({
   params,
@@ -17,14 +15,8 @@ export default async function BusinessPage({
   const page = t.businessPage;
 
   return (
-    <div className="flex flex-1 flex-col">
-      <LandingNav
-        locale={locale}
-        contactLabel={t.nav.contact}
-        links={getSiteNavLinks(locale, dict)}
-      />
-
-      <section className="bg-bosque px-6 pt-32 pb-20 sm:px-10">
+    <AppShell locale={locale} dict={dict}>
+      <section className="bg-bosque px-6 pt-16 pb-20 sm:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full bg-sol/15 px-4 py-1 text-xs font-bold tracking-[0.1em] text-sol uppercase">
             {page.badge}
@@ -65,8 +57,6 @@ export default async function BusinessPage({
           </div>
         </div>
       </section>
-
-      <SiteFooter locale={locale} dict={dict} />
-    </div>
+    </AppShell>
   );
 }

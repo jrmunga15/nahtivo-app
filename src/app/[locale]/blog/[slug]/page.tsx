@@ -4,9 +4,7 @@ import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog";
-import LandingNav from "@/components/LandingNav";
-import SiteFooter from "@/components/SiteFooter";
-import { getSiteNavLinks } from "@/lib/navLinks";
+import AppShell from "@/components/AppShell";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -25,14 +23,8 @@ export default async function BlogPostPage({
   const t = dict.blog;
 
   return (
-    <div className="flex flex-1 flex-col">
-      <LandingNav
-        locale={locale}
-        contactLabel={dict.landing.nav.contact}
-        links={getSiteNavLinks(locale, dict)}
-      />
-
-      <article className="mx-auto w-full max-w-3xl px-6 pt-28 pb-20 sm:px-10">
+    <AppShell locale={locale} dict={dict}>
+      <article className="mx-auto w-full max-w-3xl px-6 py-14 sm:px-10">
         <Link
           href={`/${locale}/blog`}
           className="text-sm font-semibold text-rios hover:underline"
@@ -74,8 +66,6 @@ export default async function BlogPostPage({
           </div>
         )}
       </article>
-
-      <SiteFooter locale={locale} dict={dict} />
-    </div>
+    </AppShell>
   );
 }
