@@ -25,6 +25,7 @@ export type Experience = {
   highlights: LocalizedList;
   includes: LocalizedList;
   guideSlug: string;
+  isNew?: boolean;
 };
 
 export const experiences: Experience[] = [
@@ -469,6 +470,7 @@ export const experiences: Experience[] = [
       en: ["Certified guide", "Horse and gear", "Bottled water"],
     },
     guideSlug: "reina-perez",
+    isNew: true,
   },
   {
     slug: "cuatrimoto-laguna-verde-apaneca",
@@ -517,6 +519,7 @@ export const experiences: Experience[] = [
       en: ["Certified guide", "ATV and safety gear", "Helmet"],
     },
     guideSlug: "willy-ramirez",
+    isNew: true,
   },
   {
     slug: "surf-barra-de-santiago",
@@ -568,6 +571,7 @@ export const experiences: Experience[] = [
       en: ["Certified guide", "Surfboard", "Sunscreen"],
     },
     guideSlug: "douglas-pineda",
+    isNew: true,
   },
   {
     slug: "patrimonio-ahuachapan",

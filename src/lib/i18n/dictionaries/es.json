@@ -15,13 +15,15 @@
     "allFilter": "Todos",
     "categoryFilterLabel": "Tipo de experiencia",
     "cityFilterLabel": "Pueblo",
-    "noResults": "No hay experiencias con esos filtros todavía. Probá con otra combinación."
+    "noResults": "No hay experiencias con esos filtros todavía. Probá con otra combinación.",
+    "newBadge": "Nuevo"
   },
   "experience": {
     "yourGuide": "Tu guía",
     "certifiedGuide": "Guía certificado por Nahtivo",
     "priceFrom": "Desde",
     "perPerson": "por persona",
+    "personUnit": "persona",
     "duration": "Duración",
     "groupSize": "Tamaño del grupo",
     "difficulty": "Dificultad",
@@ -31,7 +33,13 @@
     "aboutExperience": "Sobre esta experiencia",
     "backToCatalog": "Volver a experiencias",
     "seeFullProfile": "Ver perfil completo del guía",
-    "people": "personas"
+    "people": "personas",
+    "viewDetails": "Ver detalles",
+    "addToFavorites": "Guardar en favoritos",
+    "removeFromFavorites": "Quitar de favoritos",
+    "share": "Compartir",
+    "linkCopied": "Enlace copiado",
+    "bookExperience": "Reservar esta experiencia"
   },
   "guide": {
     "certifiedSince": "Certificado por Nahtivo desde",

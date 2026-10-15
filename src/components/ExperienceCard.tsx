@@ -5,6 +5,7 @@ import type { Guide } from "@/data/guides";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { Locale } from "@/lib/i18n/config";
 import { brandColorClasses } from "@/lib/colors";
+import ExperienceCardActions from "./ExperienceCardActions";
 
 export default function ExperienceCard({
   experience,
@@ -18,10 +19,11 @@ export default function ExperienceCard({
   dict: Dictionary;
 }) {
   const color = brandColorClasses[experience.color];
+  const detailPath = `/${locale}/experiencias/${experience.slug}`;
 
   return (
     <Link
-      href={`/${locale}/experiencias/${experience.slug}`}
+      href={detailPath}
       className="group flex flex-col overflow-hidden rounded-2xl border border-bosque/10 bg-white shadow-sm transition-shadow hover:shadow-lg"
     >
       <div className={`relative h-40 ${color.bg}`}>
@@ -32,48 +34,60 @@ export default function ExperienceCard({
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover"
         />
+
+        {experience.isNew && (
+          <span className="absolute top-3 left-3 rounded-full bg-acento px-3 py-1 text-xs font-bold text-bosque shadow">
+            {dict.home.newBadge}
+          </span>
+        )}
+
+        <ExperienceCardActions
+          slug={experience.slug}
+          shareTitle={experience.title[locale]}
+          sharePath={detailPath}
+          labels={{
+            addToFavorites: dict.experience.addToFavorites,
+            removeFromFavorites: dict.experience.removeFromFavorites,
+            share: dict.experience.share,
+            linkCopied: dict.experience.linkCopied,
+          }}
+        />
+
         <span
-          className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-lg shadow"
+          className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-verde text-lg text-white shadow"
           aria-hidden
+          title={guide.name}
         >
-          {experience.emoji}
+          {guide.emoji}
         </span>
       </div>
-      <div className="flex flex-1 flex-col gap-3 p-5">
-        <span
-          className={`w-fit rounded-full px-3 py-1 text-xs font-semibold ${color.bgSoft} ${color.text}`}
-        >
-          {experience.category[locale]}
-        </span>
+
+      <div className="flex flex-1 flex-col gap-2 p-5">
+        <p className="flex items-center gap-1 text-xs font-semibold text-bosque/50">
+          <span aria-hidden>📍</span> {experience.city[locale]}
+          <span className="text-bosque/30">·</span>
+          <span className={color.text}>{experience.category[locale]}</span>
+        </p>
         <h3 className="font-heading text-lg font-bold text-bosque group-hover:text-verde">
           {experience.title[locale]}
         </h3>
         <p className="text-sm text-bosque/70">
           {experience.shortDescription[locale]}
         </p>
+        <p className="text-sm text-bosque/60">
+          {dict.home.guidedBy}{" "}
+          <span className="font-semibold text-bosque">{guide.name}</span>
+        </p>
 
-        <div className="mt-2 flex items-center gap-2 rounded-xl bg-bosque/5 p-3">
-          <span
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-verde text-lg"
-            aria-hidden
-          >
-            {guide.emoji}
-          </span>
-          <div className="text-sm">
-            <p className="text-bosque/50">{dict.home.guidedBy}</p>
-            <p className="font-semibold text-bosque">{guide.name}</p>
-          </div>
-        </div>
-
-        <div className="mt-auto flex items-center justify-between pt-2">
+        <div className="mt-auto flex items-end justify-between pt-3">
           <p className="text-sm text-bosque/60">
-            {dict.experience.priceFrom}{" "}
-            <span className="font-heading text-lg font-bold text-bosque">
+            <span className="font-heading text-xl font-bold text-bosque">
               ${experience.priceUSD}
-            </span>
+            </span>{" "}
+            / {dict.experience.personUnit}
           </p>
-          <span className="text-sm font-semibold text-rios">
-            {experience.durationHours}h
+          <span className="rounded-full bg-bosque px-4 py-2 text-xs font-semibold text-white transition-colors group-hover:bg-verde">
+            {dict.experience.viewDetails}
           </span>
         </div>
       </div>

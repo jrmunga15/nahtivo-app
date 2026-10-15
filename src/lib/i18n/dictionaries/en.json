@@ -15,13 +15,15 @@
     "allFilter": "All",
     "categoryFilterLabel": "Experience type",
     "cityFilterLabel": "Town",
-    "noResults": "No experiences match those filters yet. Try a different combination."
+    "noResults": "No experiences match those filters yet. Try a different combination.",
+    "newBadge": "New"
   },
   "experience": {
     "yourGuide": "Your guide",
     "certifiedGuide": "Guide certified by Nahtivo",
     "priceFrom": "From",
     "perPerson": "per person",
+    "personUnit": "person",
     "duration": "Duration",
     "groupSize": "Group size",
     "difficulty": "Difficulty",
@@ -31,7 +33,13 @@
     "aboutExperience": "About this experience",
     "backToCatalog": "Back to experiences",
     "seeFullProfile": "See full guide profile",
-    "people": "people"
+    "people": "people",
+    "viewDetails": "View details",
+    "addToFavorites": "Save to favorites",
+    "removeFromFavorites": "Remove from favorites",
+    "share": "Share",
+    "linkCopied": "Link copied",
+    "bookExperience": "Book this experience"
   },
   "guide": {
     "certifiedSince": "Certified by Nahtivo since",
