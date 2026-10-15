@@ -28,8 +28,8 @@ export default async function ToursPage({
 
   const buildHref = (next: { category?: string; city?: string }) => {
     const params = new URLSearchParams();
-    const nextCategory = next.category ?? activeCategory;
-    const nextCity = next.city ?? activeCity;
+    const nextCategory = "category" in next ? next.category : activeCategory;
+    const nextCity = "city" in next ? next.city : activeCity;
     if (nextCategory) params.set("category", nextCategory);
     if (nextCity) params.set("city", nextCity);
     const query = params.toString();
