@@ -47,7 +47,7 @@ export default async function ToursPage({
     <AppShell locale={locale} dict={dict}>
       <div className="mx-auto w-full max-w-6xl px-6 py-10">
         <section className="mb-12 rounded-3xl bg-bosque px-8 py-14 text-center text-white">
-          <h1 className="mx-auto max-w-2xl font-heading text-3xl font-extrabold sm:text-4xl">
+          <h1 className="mx-auto max-w-2xl font-heading text-3xl font-extrabold whitespace-pre-line sm:text-4xl">
             {dict.home.heroTitle}
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-white/80">
