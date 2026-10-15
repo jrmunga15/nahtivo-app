@@ -40,7 +40,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "willy-ramirez",
-    name: "Wilfredo \"Willy\" Ramírez",
+    name: 'Wilfredo "Willy" Ramírez',
     emoji: "🌋",
     location: { es: "Apaneca", en: "Apaneca" },
     certifiedSince: 2021,
@@ -70,6 +70,23 @@ export const guides: Guide[] = [
     specialties: {
       es: ["Naturaleza y bosque nuboso", "Cascadas", "Turismo comunitario"],
       en: ["Nature and cloud forest", "Waterfalls", "Community tourism"],
+    },
+  },
+  {
+    slug: "douglas-pineda",
+    name: "Douglas Pineda",
+    emoji: "🐢",
+    location: { es: "Barra de Santiago", en: "Barra de Santiago" },
+    certifiedSince: 2023,
+    yearsExperience: 11,
+    languages: ["Español"],
+    bio: {
+      es: "Nací en Barra de Santiago y desde joven trabajo en los proyectos de conservación de tortugas marinas de la zona. Conozco el manglar como la palma de mi mano: sus canales, sus aves, y las familias de pescadores que viven de él. Me certifiqué con Nahtivo para compartir ese conocimiento con más gente, sin dejar de cuidar lo que nos da de comer.",
+      en: "I was born in Barra de Santiago and have worked in the area's sea turtle conservation projects since I was young. I know the mangrove like the back of my hand: its channels, its birds, and the fishing families who depend on it. I got certified with Nahtivo to share that knowledge with more people, without losing sight of protecting what feeds us.",
+    },
+    specialties: {
+      es: ["Conservación marina", "Manglares", "Pesca artesanal"],
+      en: ["Marine conservation", "Mangroves", "Artisanal fishing"],
     },
   },
 ];

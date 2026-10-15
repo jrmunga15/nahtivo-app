@@ -12,7 +12,10 @@
     "heroSubtitle": "Cada experiencia la lleva un guía local certificado por Nahtivo. Vos primero conocés a la persona, después la experiencia.",
     "catalogTitle": "Experiencias disponibles",
     "guidedBy": "Guiado por",
-    "allFilter": "Todos"
+    "allFilter": "Todos",
+    "categoryFilterLabel": "Tipo de experiencia",
+    "cityFilterLabel": "Pueblo",
+    "noResults": "No hay experiencias con esos filtros todavía. Probá con otra combinación."
   },
   "experience": {
     "yourGuide": "Tu guía",

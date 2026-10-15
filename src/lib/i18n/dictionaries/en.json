@@ -12,7 +12,10 @@
     "heroSubtitle": "Every experience is led by a local guide certified by Nahtivo. You meet the person first, then the experience.",
     "catalogTitle": "Available experiences",
     "guidedBy": "Guided by",
-    "allFilter": "All"
+    "allFilter": "All",
+    "categoryFilterLabel": "Experience type",
+    "cityFilterLabel": "Town",
+    "noResults": "No experiences match those filters yet. Try a different combination."
   },
   "experience": {
     "yourGuide": "Your guide",

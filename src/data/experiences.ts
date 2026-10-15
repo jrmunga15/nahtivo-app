@@ -11,6 +11,8 @@ export type Experience = {
   description: LocalizedText;
   category: LocalizedText;
   categorySlug: string;
+  city: LocalizedText;
+  citySlug: string;
   emoji: string;
   color: BrandColor;
   priceUSD: number;
@@ -41,6 +43,8 @@ export const experiences: Experience[] = [
     },
     category: { es: "Naturaleza", en: "Nature" },
     categorySlug: "naturaleza",
+    city: { es: "Tacuba", en: "Tacuba" },
+    citySlug: "tacuba",
     emoji: "🥾",
     color: "verde",
     priceUSD: 35,
@@ -86,6 +90,8 @@ export const experiences: Experience[] = [
     },
     category: { es: "Volcanes", en: "Volcanoes" },
     categorySlug: "volcanes",
+    city: { es: "Apaneca", en: "Apaneca" },
+    citySlug: "apaneca",
     emoji: "🌋",
     color: "bosque",
     priceUSD: 40,
@@ -131,6 +137,8 @@ export const experiences: Experience[] = [
     },
     category: { es: "Cultura", en: "Culture" },
     categorySlug: "cultura",
+    city: { es: "Concepción de Ataco", en: "Concepción de Ataco" },
+    citySlug: "ataco",
     emoji: "🖼️",
     color: "sol",
     priceUSD: 20,
@@ -179,6 +187,8 @@ export const experiences: Experience[] = [
     },
     category: { es: "Aguas termales", en: "Hot springs" },
     categorySlug: "aguas-termales",
+    city: { es: "Ahuachapán", en: "Ahuachapán" },
+    citySlug: "ahuachapan",
     emoji: "♨️",
     color: "rios",
     priceUSD: 30,
@@ -224,6 +234,8 @@ export const experiences: Experience[] = [
     },
     category: { es: "Café", en: "Coffee" },
     categorySlug: "cafe",
+    city: { es: "Apaneca", en: "Apaneca" },
+    citySlug: "apaneca",
     emoji: "☕",
     color: "tronco",
     priceUSD: 25,
@@ -253,6 +265,201 @@ export const experiences: Experience[] = [
     },
     guideSlug: "reina-perez",
   },
+  {
+    slug: "siete-cascadas-tacuba",
+    title: {
+      es: "Ruta de las Siete Cascadas",
+      en: "Seven Waterfalls Route",
+    },
+    shortDescription: {
+      es: "Un recorrido de cascada en cascada por el río Guayapa, cerca de El Imposible.",
+      en: "A waterfall-to-waterfall trek along the Guayapa river, near El Imposible.",
+    },
+    description: {
+      es: "Caminamos y nadamos de cascada en cascada por un tramo del río Guayapa, en los alrededores de Tacuba. Es una de las rutas más queridas de la zona: hay saltos de agua para refrescarte, pozas naturales y tramos cortos de rappel opcional en las caídas más altas. Marta conoce cada poza y cada roca del camino.",
+      en: "We walk and swim from waterfall to waterfall along a stretch of the Guayapa river, around Tacuba. It's one of the area's best-loved routes: there are falls to cool off in, natural pools, and short optional rappels at the taller drops. Marta knows every pool and rock along the way.",
+    },
+    category: { es: "Cascadas", en: "Waterfalls" },
+    categorySlug: "cascadas",
+    city: { es: "Tacuba", en: "Tacuba" },
+    citySlug: "tacuba",
+    emoji: "💦",
+    color: "verde",
+    priceUSD: 30,
+    durationHours: 4,
+    groupSizeMax: 8,
+    difficulty: "moderate",
+    location: { es: "Tacuba, Ahuachapán", en: "Tacuba, Ahuachapán" },
+    meetingPoint: {
+      es: "Centro de visitantes, cantón San José Miramar, Tacuba",
+      en: "Visitor center, San José Miramar canton, Tacuba",
+    },
+    highlights: {
+      es: [
+        "Siete caídas de agua en un solo recorrido",
+        "Pozas naturales para nadar",
+        "Rappel opcional en la cascada más alta",
+      ],
+      en: [
+        "Seven waterfalls in a single route",
+        "Natural pools for swimming",
+        "Optional rappel at the tallest fall",
+      ],
+    },
+    includes: {
+      es: [
+        "Guía certificado",
+        "Chaleco salvavidas",
+        "Equipo de rappel (tramo opcional)",
+      ],
+      en: ["Certified guide", "Life vest", "Rappel gear (optional section)"],
+    },
+    guideSlug: "marta-coreas",
+  },
+  {
+    slug: "tirolesa-apaneca",
+    title: {
+      es: "Tirolesa y canopy en Apaneca",
+      en: "Zip-line canopy in Apaneca",
+    },
+    shortDescription: {
+      es: "Una serie de cables de tirolesa sobre el bosque de pino-roble de Apaneca.",
+      en: "A series of zip-lines over Apaneca's pine-oak forest.",
+    },
+    description: {
+      es: "Cruzamos el bosque de Apaneca por una serie de cables de tirolesa, con vistas a los cerros y cafetales de la Ruta de Las Flores desde las alturas. Willy te da la inducción de seguridad completa antes de subir, y te acompaña en cada tramo. Ideal para quienes quieren algo de adrenalina sin ser expertos.",
+      en: "We cross the Apaneca forest on a series of zip-lines, with views of the hills and coffee fields of the Flower Route from above. Willy gives you the full safety briefing before you go up, and stays with you on every stretch. Great for anyone who wants some adrenaline without being an expert.",
+    },
+    category: { es: "Aventura", en: "Adventure" },
+    categorySlug: "aventura",
+    city: { es: "Apaneca", en: "Apaneca" },
+    citySlug: "apaneca",
+    emoji: "🚡",
+    color: "bosque",
+    priceUSD: 25,
+    durationHours: 1.5,
+    groupSizeMax: 10,
+    difficulty: "easy",
+    location: { es: "Apaneca, Ahuachapán", en: "Apaneca, Ahuachapán" },
+    meetingPoint: {
+      es: "Parque central de Apaneca",
+      en: "Apaneca central park",
+    },
+    highlights: {
+      es: [
+        "8 cables sobre el bosque de Apaneca",
+        "Vistas panorámicas de la Ruta de Las Flores",
+        "Inducción de seguridad incluida",
+      ],
+      en: [
+        "8 cables over the Apaneca forest",
+        "Panoramic views of the Flower Route",
+        "Safety briefing included",
+      ],
+    },
+    includes: {
+      es: ["Guía certificado", "Equipo de seguridad completo", "Casco y arnés"],
+      en: ["Certified guide", "Full safety gear", "Helmet and harness"],
+    },
+    guideSlug: "willy-ramirez",
+  },
+  {
+    slug: "manglares-barra-de-santiago",
+    title: {
+      es: "Manglares y playa de Barra de Santiago",
+      en: "Barra de Santiago mangroves and beach",
+    },
+    shortDescription: {
+      es: "Recorrido en lancha por los manglares y conservación de tortugas marinas en la costa de Ahuachapán.",
+      en: "A boat tour through the mangroves and sea turtle conservation on the Ahuachapán coast.",
+    },
+    description: {
+      es: "Barra de Santiago es un pueblo de pescadores entre el mar y uno de los manglares mejor conservados de El Salvador. Navegamos en lancha por los canales del manglar, paramos en el vivero de tortugas donde se protegen los nidos de la zona, y cerramos el día en la playa. Douglas lleva más de diez años trabajando en conservación marina ahí mismo.",
+      en: "Barra de Santiago is a fishing village between the ocean and one of El Salvador's best-preserved mangrove forests. We take a boat through the mangrove channels, stop at the turtle hatchery that protects the area's nests, and end the day at the beach. Douglas has spent over ten years doing marine conservation work right there.",
+    },
+    category: { es: "Naturaleza", en: "Nature" },
+    categorySlug: "naturaleza",
+    city: { es: "Barra de Santiago", en: "Barra de Santiago" },
+    citySlug: "barra-de-santiago",
+    emoji: "🐢",
+    color: "rios",
+    priceUSD: 30,
+    durationHours: 4,
+    groupSizeMax: 10,
+    difficulty: "easy",
+    location: {
+      es: "Barra de Santiago, San Francisco Menéndez",
+      en: "Barra de Santiago, San Francisco Menéndez",
+    },
+    meetingPoint: {
+      es: "Muelle de lanchas de Barra de Santiago",
+      en: "Barra de Santiago boat dock",
+    },
+    highlights: {
+      es: [
+        "Recorrido en lancha por el manglar",
+        "Visita al vivero de tortugas marinas",
+        "Tiempo libre en la playa",
+      ],
+      en: [
+        "Boat tour through the mangroves",
+        "Visit to the sea turtle hatchery",
+        "Free time at the beach",
+      ],
+    },
+    includes: {
+      es: ["Guía certificado", "Recorrido en lancha", "Chaleco salvavidas"],
+      en: ["Certified guide", "Boat tour", "Life vest"],
+    },
+    guideSlug: "douglas-pineda",
+  },
+  {
+    slug: "cabalgata-cafetales-apaneca",
+    title: {
+      es: "Cabalgata por los cafetales de Apaneca",
+      en: "Horseback ride through the Apaneca coffee fields",
+    },
+    shortDescription: {
+      es: "Paseo a caballo entre fincas de café de altura, con parada en un mirador.",
+      en: "A horseback ride through high-altitude coffee farms, with a stop at a lookout.",
+    },
+    description: {
+      es: "Recorremos a caballo los caminos entre fincas cafetaleras de Apaneca, subiendo hasta un mirador con vista a los volcanes de la zona. No necesitás experiencia previa: Reina te enseña lo básico antes de salir y elige caballos tranquilos para el grupo.",
+      en: "We ride on horseback through the paths between Apaneca's coffee farms, climbing up to a lookout with views of the area's volcanoes. No previous experience needed: Reina teaches you the basics before you set out and picks calm horses for the group.",
+    },
+    category: { es: "Aventura", en: "Adventure" },
+    categorySlug: "aventura",
+    city: { es: "Apaneca", en: "Apaneca" },
+    citySlug: "apaneca",
+    emoji: "🐴",
+    color: "tronco",
+    priceUSD: 28,
+    durationHours: 2.5,
+    groupSizeMax: 6,
+    difficulty: "easy",
+    location: { es: "Apaneca, Ahuachapán", en: "Apaneca, Ahuachapán" },
+    meetingPoint: {
+      es: "Establo a la entrada de Apaneca, sobre la Ruta de Las Flores",
+      en: "Stable at the entrance to Apaneca, on the Flower Route",
+    },
+    highlights: {
+      es: [
+        "Cabalgata por fincas de café de altura",
+        "Mirador con vista a los volcanes",
+        "Caballos mansos, apto para principiantes",
+      ],
+      en: [
+        "Horseback ride through high-altitude coffee farms",
+        "Lookout with volcano views",
+        "Gentle horses, beginner-friendly",
+      ],
+    },
+    includes: {
+      es: ["Guía certificado", "Caballo y equipo", "Agua embotellada"],
+      en: ["Certified guide", "Horse and gear", "Bottled water"],
+    },
+    guideSlug: "reina-perez",
+  },
 ];
 
 export const getExperienceBySlug = (slug: string) =>
@@ -271,6 +478,15 @@ export const categories = experiences.reduce<
       emoji: experience.emoji,
       color: experience.color,
     });
+  }
+  return acc;
+}, []);
+
+export const cities = experiences.reduce<
+  { slug: string; city: LocalizedText }[]
+>((acc, experience) => {
+  if (!acc.some((c) => c.slug === experience.citySlug)) {
+    acc.push({ slug: experience.citySlug, city: experience.city });
   }
   return acc;
 }, []);
