@@ -7,6 +7,7 @@ import { categories, getExperienceBySlug } from "@/data/experiences";
 import { getGuideBySlug } from "@/data/guides";
 import { brandColorClasses } from "@/lib/colors";
 import LandingNav from "@/components/LandingNav";
+import LandingFooter from "@/components/LandingFooter";
 import SubscribeForm from "@/components/SubscribeForm";
 import ExperienceCard from "@/components/ExperienceCard";
 
@@ -37,7 +38,15 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
 
   return (
     <div className="flex flex-1 flex-col">
-      <LandingNav locale={locale} contactLabel={t.nav.contact} />
+      <LandingNav
+        locale={locale}
+        contactLabel={t.nav.contact}
+        links={[
+          { href: `/${locale}/tours`, label: t.nav.tours },
+          { href: `/${locale}/academy`, label: t.nav.academy },
+          { href: `/${locale}/negocios`, label: t.nav.business },
+        ]}
+      />
 
       {/* HERO */}
       <section className="relative flex h-screen min-h-[600px] items-center justify-center overflow-hidden text-center">
@@ -144,119 +153,6 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="servicios" className="bg-[#F4FAF7]">
-        <div className="mx-auto w-full max-w-5xl px-6 py-20 sm:px-10">
-          <p className="mb-3 text-xs font-bold tracking-[0.18em] text-verde uppercase">
-            {t.services.eyebrow}
-          </p>
-          <h2 className="mb-12 max-w-xl font-heading text-3xl leading-tight font-black tracking-tight text-bosque uppercase sm:text-4xl">
-            {t.services.title}
-          </h2>
-
-          <div className="grid gap-6 sm:grid-cols-3">
-            <Link
-              href={`/${locale}/tours`}
-              className="overflow-hidden rounded-2xl border border-[#D1E8DB] bg-white transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-bosque/10"
-            >
-              <div className="relative h-[180px] w-full">
-                <Image
-                  src="/landing/tour-guide.jpg"
-                  alt=""
-                  fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <span className="mb-3 inline-block rounded-full bg-[#D4F0E2] px-3 py-1 text-[0.65rem] font-bold tracking-wide text-verde uppercase">
-                  {t.services.tours.badge}
-                </span>
-                <h3 className="mb-2 text-base font-extrabold tracking-wide text-bosque uppercase">
-                  {t.services.tours.title}
-                </h3>
-                <p className="text-sm text-[#6B7280]">
-                  {t.services.tours.description}
-                </p>
-              </div>
-            </Link>
-
-            <div className="overflow-hidden rounded-2xl border border-[#D1E8DB] bg-white">
-              <div className="relative h-[180px] w-full">
-                <Image
-                  src="/landing/creator.jpg"
-                  alt=""
-                  fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <span className="mb-3 inline-block rounded-full bg-[#FEF3DC] px-3 py-1 text-[0.65rem] font-bold tracking-wide text-[#7A5C10] uppercase">
-                  {t.services.content.badge}
-                </span>
-                <h3 className="mb-2 text-base font-extrabold tracking-wide text-bosque uppercase">
-                  {t.services.content.title}
-                </h3>
-                <p className="text-sm text-[#6B7280]">
-                  {t.services.content.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl border border-[#D1E8DB] bg-white">
-              <div className="relative h-[180px] w-full">
-                <Image
-                  src="/landing/academy.jpg"
-                  alt=""
-                  fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <span className="mb-3 inline-block rounded-full bg-[#D8EDE4] px-3 py-1 text-[0.65rem] font-bold tracking-wide text-bosque uppercase">
-                  {t.services.academy.badge}
-                </span>
-                <h3 className="mb-2 text-base font-extrabold tracking-wide text-bosque uppercase">
-                  {t.services.academy.title}
-                </h3>
-                <p className="text-sm text-[#6B7280]">
-                  {t.services.academy.description}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* ACADEMY BAND */}
-          <div className="mt-8 flex flex-wrap items-center gap-12 rounded-2xl bg-bosque p-8 sm:p-12">
-            <div className="min-w-[260px] flex-1">
-              <h3 className="mb-2 font-heading text-2xl font-black tracking-wide text-white uppercase">
-                {t.academyBand.titlePrefix}{" "}
-                <span className="text-acento">
-                  {t.academyBand.titleEmphasis}
-                </span>
-              </h3>
-              <p className="max-w-md text-sm font-light text-white/60">
-                {t.academyBand.description}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-10">
-              {t.academyBand.stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-heading text-4xl leading-none font-black text-acento">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-xs font-semibold tracking-[0.1em] text-white/45 uppercase">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SUBSCRIBE */}
       <section id="unete" className="relative">
         <Image
@@ -290,19 +186,7 @@ export default async function LandingPage({ params }: PageProps<"/[locale]">) {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="flex flex-wrap items-center justify-between gap-4 bg-bosque px-6 py-8 sm:px-10">
-        <Image
-          src="/nahtivo-logo-white.png"
-          alt="Nahtivo"
-          width={140}
-          height={28}
-          className="h-7 w-auto"
-        />
-        <p className="text-sm text-white/45">
-          {t.footer.location} — {new Date().getFullYear()}
-        </p>
-      </footer>
+      <LandingFooter dict={dict} />
     </div>
   );
 }

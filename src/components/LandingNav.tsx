@@ -9,9 +9,11 @@ import LanguageSwitcher from "./LanguageSwitcher";
 export default function LandingNav({
   locale,
   contactLabel,
+  links,
 }: {
   locale: Locale;
   contactLabel: string;
+  links: { href: string; label: string }[];
 }) {
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,6 +40,17 @@ export default function LandingNav({
           priority
         />
       </Link>
+      <div className="hidden items-center gap-6 md:flex">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="text-sm font-semibold text-white/80 transition-colors hover:text-white"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
       <div className="flex items-center gap-4">
         <LanguageSwitcher locale={locale} variant="dark" />
         <a

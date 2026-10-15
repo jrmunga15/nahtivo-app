@@ -7,12 +7,18 @@ type FieldErrors = Partial<Record<"fullName" | "email" | "interest", string>>;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export default function SubscribeForm({ dict }: { dict: Dictionary }) {
+export default function SubscribeForm({
+  dict,
+  defaultInterest = "",
+}: {
+  dict: Dictionary;
+  defaultInterest?: string;
+}) {
   const t = dict.landing.subscribe;
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [interest, setInterest] = useState("");
+  const [interest, setInterest] = useState(defaultInterest);
 
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitting, setSubmitting] = useState(false);

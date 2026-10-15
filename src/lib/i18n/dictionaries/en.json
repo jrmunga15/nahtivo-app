@@ -76,7 +76,10 @@
   },
   "landing": {
     "nav": {
-      "contact": "Contact us"
+      "contact": "Contact us",
+      "tours": "Tours",
+      "academy": "Academy",
+      "business": "Business"
     },
     "hero": {
       "titleLine1": "The destination,",
@@ -94,33 +97,26 @@
       "title": "Featured experiences",
       "cta": "See all experiences"
     },
-    "services": {
-      "eyebrow": "Our solution",
-      "title": "Three service lines, one purpose",
-      "tours": {
-        "badge": "Tours — B2C",
-        "title": "Certified local guides",
-        "description": "Book tours in Ahuachapán led by people from the region. Hot springs, waterfalls, coffee and culture. Authentic experiences, not generic ones."
-      },
-      "content": {
-        "badge": "Content — B2B",
-        "title": "Creators for your business",
-        "description": "We connect hotels, restaurants and attractions with photographers and videographers from our local network. Custom packages, quality production."
-      },
-      "academy": {
-        "badge": "Education — EDU",
-        "title": "Academy",
-        "description": "Paid workshops and courses with guest creators who come to Ahuachapán to teach. Personal branding, audiovisual production, social media and more."
-      }
+    "academyPage": {
+      "badge": "Education — EDU",
+      "title": "Nahtivo Academy",
+      "description": "Paid workshops and courses with guest creators who come to Ahuachapán to teach. Personal branding, audiovisual production, social media and more.",
+      "points": [
+        "In-person workshops with guest creators",
+        "Personal branding and audiovisual production",
+        "Social media and content strategy",
+        "Graduates join our creator network"
+      ]
     },
-    "academyBand": {
-      "titlePrefix": "Nahtivo",
-      "titleEmphasis": "Academy",
-      "description": "We bring the best creators in the country to teach here. Graduates join our B2B creator network, closing the full cycle.",
-      "stats": [
-        { "value": "3", "label": "revenue lines" },
-        { "value": "∞", "label": "local talent" },
-        { "value": "1", "label": "winning destination" }
+    "businessPage": {
+      "badge": "Content — B2B",
+      "title": "Creators for your business",
+      "description": "We connect hotels, restaurants and attractions with photographers and videographers from our local network. Custom packages, quality production.",
+      "points": [
+        "Professional photo and video for your business",
+        "Custom packages for any budget",
+        "Network of vetted local creators",
+        "Content ready for social media and the web"
       ]
     },
     "cta": {

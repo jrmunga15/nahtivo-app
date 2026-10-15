@@ -76,7 +76,10 @@
   },
   "landing": {
     "nav": {
-      "contact": "Contáctanos"
+      "contact": "Contáctanos",
+      "tours": "Tours",
+      "academy": "Academy",
+      "business": "Negocios"
     },
     "hero": {
       "titleLine1": "El destino,",
@@ -94,33 +97,26 @@
       "title": "Experiencias destacadas",
       "cta": "Ver todas las experiencias"
     },
-    "services": {
-      "eyebrow": "Nuestra solución",
-      "title": "Tres líneas de servicio, un mismo propósito",
-      "tours": {
-        "badge": "Tours — B2C",
-        "title": "Guías locales certificados",
-        "description": "Reserva tours en Ahuachapán guiados por personas de la región. Termales, cascadas, café y cultura. Experiencias auténticas, no genéricas."
-      },
-      "content": {
-        "badge": "Contenido — B2B",
-        "title": "Creadores para tu negocio",
-        "description": "Conectamos hoteles, restaurantes y atracciones con fotógrafos y videógrafos de nuestra red local. Paquetes a la medida, producción de calidad."
-      },
-      "academy": {
-        "badge": "Formación — EDU",
-        "title": "Academy",
-        "description": "Talleres y cursos pagados con creadores invitados que vienen a Ahuachapán a enseñar. Marca personal, producción audiovisual, redes sociales y más."
-      }
+    "academyPage": {
+      "badge": "Formación — EDU",
+      "title": "Nahtivo Academy",
+      "description": "Talleres y cursos pagados con creadores invitados que vienen a Ahuachapán a enseñar. Marca personal, producción audiovisual, redes sociales y más.",
+      "points": [
+        "Talleres presenciales con creadores invitados",
+        "Marca personal y producción audiovisual",
+        "Redes sociales y estrategia de contenido",
+        "Al terminar, te sumás a nuestra red de creadores"
+      ]
     },
-    "academyBand": {
-      "titlePrefix": "Nahtivo",
-      "titleEmphasis": "Academy",
-      "description": "Traemos a los mejores creadores del país para que enseñen aquí. Los egresados se integran a nuestra red de creadores B2B, cerrando el ciclo completo.",
-      "stats": [
-        { "value": "3", "label": "líneas de ingreso" },
-        { "value": "∞", "label": "talento local" },
-        { "value": "1", "label": "destino ganador" }
+    "businessPage": {
+      "badge": "Contenido — B2B",
+      "title": "Creadores para tu negocio",
+      "description": "Conectamos hoteles, restaurantes y atracciones con fotógrafos y videógrafos de nuestra red local. Paquetes a la medida, producción de calidad.",
+      "points": [
+        "Fotografía y video profesional de tu negocio",
+        "Paquetes a la medida según tu presupuesto",
+        "Red de creadores locales verificados",
+        "Contenido listo para redes sociales y web"
       ]
     },
     "cta": {
