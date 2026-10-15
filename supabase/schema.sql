@@ -43,3 +43,11 @@ create policy "Allow authenticated read" on reservations
 create policy "Allow authenticated read" on subscribers
   for select to authenticated
   using (true);
+
+create policy "Allow authenticated delete" on reservations
+  for delete to authenticated
+  using (true);
+
+create policy "Allow authenticated delete" on subscribers
+  for delete to authenticated
+  using (true);

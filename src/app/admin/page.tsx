@@ -1,5 +1,6 @@
 import { createServerSupabaseClient } from "@/lib/supabase-server";
-import { signOut } from "./actions";
+import { signOut, deleteReservation, deleteSubscriber } from "./actions";
+import DeleteButton from "@/components/admin/DeleteButton";
 
 type Reservation = {
   id: string;
@@ -89,6 +90,7 @@ export default async function AdminPage() {
                   <th className="px-4 py-3">Notas</th>
                   <th className="px-4 py-3">Código</th>
                   <th className="px-4 py-3">Total</th>
+                  <th className="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody>
@@ -119,12 +121,18 @@ export default async function AdminPage() {
                       <td className="px-4 py-3 font-semibold text-bosque">
                         ${r.total_usd}
                       </td>
+                      <td className="px-4 py-3">
+                        <form action={deleteReservation}>
+                          <input type="hidden" name="id" value={r.id} />
+                          <DeleteButton />
+                        </form>
+                      </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
                     <td
-                      colSpan={9}
+                      colSpan={10}
                       className="px-4 py-8 text-center text-bosque/50"
                     >
                       Todavía no hay reservas.
@@ -148,6 +156,7 @@ export default async function AdminPage() {
                   <th className="px-4 py-3">Nombre</th>
                   <th className="px-4 py-3">Correo</th>
                   <th className="px-4 py-3">Interés</th>
+                  <th className="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody>
@@ -162,12 +171,18 @@ export default async function AdminPage() {
                       <td className="px-4 py-3 text-bosque/70">
                         {interestLabels[s.interest] ?? s.interest}
                       </td>
+                      <td className="px-4 py-3">
+                        <form action={deleteSubscriber}>
+                          <input type="hidden" name="id" value={s.id} />
+                          <DeleteButton />
+                        </form>
+                      </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
                     <td
-                      colSpan={4}
+                      colSpan={5}
                       className="px-4 py-8 text-center text-bosque/50"
                     >
                       Todavía no hay suscriptores.
