@@ -85,8 +85,8 @@ export const guides: Guide[] = [
       en: "I was born in Barra de Santiago and have worked in the area's sea turtle conservation projects since I was young. I know the mangrove like the back of my hand: its channels, its birds, and the fishing families who depend on it. I got certified with Nahtivo to share that knowledge with more people, without losing sight of protecting what feeds us.",
     },
     specialties: {
-      es: ["Conservación marina", "Manglares", "Pesca artesanal"],
-      en: ["Marine conservation", "Mangroves", "Artisanal fishing"],
+      es: ["Conservación marina", "Manglares", "Surf"],
+      en: ["Marine conservation", "Mangroves", "Surfing"],
     },
   },
 ];

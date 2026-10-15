@@ -470,6 +470,153 @@ export const experiences: Experience[] = [
     },
     guideSlug: "reina-perez",
   },
+  {
+    slug: "cuatrimoto-laguna-verde-apaneca",
+    title: {
+      es: "Cuatrimoto a Laguna Verde y Las Antenas",
+      en: "ATV ride to Laguna Verde and Las Antenas",
+    },
+    shortDescription: {
+      es: "Ruta en cuatrimoto por los cerros de Apaneca hasta un mirador con vista al cráter de Laguna Verde.",
+      en: "An ATV route through the hills of Apaneca up to a lookout over the Laguna Verde crater.",
+    },
+    description: {
+      es: "Subimos en cuatrimoto por caminos de tierra entre pinares y cafetales, cruzando algunos de los miradores más altos de la zona hasta llegar cerca del cráter de Laguna Verde. Willy maneja el ritmo según tu experiencia y para en los puntos con mejor vista para que tomés fotos. No hace falta haber manejado una cuatrimoto antes.",
+      en: "We ride ATVs up dirt roads through pine forest and coffee fields, crossing some of the area's highest lookout points on the way to the Laguna Verde crater. Willy sets the pace to match your experience and stops at the best viewpoints for photos. No previous ATV experience needed.",
+    },
+    category: { es: "Cuatrimotos", en: "ATV Tours" },
+    categorySlug: "cuatrimotos",
+    city: { es: "Apaneca", en: "Apaneca" },
+    citySlug: "apaneca",
+    emoji: "🏍️",
+    image: "/experiences/cuatrimoto-laguna-verde-apaneca.jpg",
+    color: "tronco",
+    priceUSD: 45,
+    durationHours: 2.5,
+    groupSizeMax: 6,
+    difficulty: "moderate",
+    location: { es: "Apaneca, Ahuachapán", en: "Apaneca, Ahuachapán" },
+    meetingPoint: {
+      es: "Parque central de Apaneca",
+      en: "Apaneca central park",
+    },
+    highlights: {
+      es: [
+        "Mirador con vista al cráter de Laguna Verde",
+        "Recorrido por pinares y cafetales",
+        "Cuatrimoto individual o en pareja",
+      ],
+      en: [
+        "Lookout over the Laguna Verde crater",
+        "Ride through pine forest and coffee fields",
+        "Solo or tandem ATV",
+      ],
+    },
+    includes: {
+      es: ["Guía certificado", "Cuatrimoto y equipo de seguridad", "Casco"],
+      en: ["Certified guide", "ATV and safety gear", "Helmet"],
+    },
+    guideSlug: "willy-ramirez",
+  },
+  {
+    slug: "surf-barra-de-santiago",
+    title: {
+      es: "Clase de surf en Barra de Santiago",
+      en: "Surf lesson in Barra de Santiago",
+    },
+    shortDescription: {
+      es: "Tu primera tabla de surf en una de las playas con mejor oleaje del occidente de El Salvador.",
+      en: "Your first surfboard on one of western El Salvador's best beach breaks.",
+    },
+    description: {
+      es: "Barra de Santiago tiene un beach break con olas para todos los niveles. Douglas te enseña lo básico en la arena antes de meterte al agua, y te acompaña hasta que agarrés tus primeras olas de pie. Después de la clase, hay tiempo para descansar en la playa.",
+      en: "Barra de Santiago has a beach break with waves for every level. Douglas teaches you the basics on the sand before you get in the water, and stays with you until you catch your first waves standing up. After the lesson, there's time to relax on the beach.",
+    },
+    category: { es: "Surf", en: "Surf" },
+    categorySlug: "surf",
+    city: { es: "Barra de Santiago", en: "Barra de Santiago" },
+    citySlug: "barra-de-santiago",
+    emoji: "🏄",
+    image: "/experiences/surf-barra-de-santiago.jpg",
+    color: "rios",
+    priceUSD: 25,
+    durationHours: 2,
+    groupSizeMax: 6,
+    difficulty: "easy",
+    location: {
+      es: "Barra de Santiago, San Francisco Menéndez",
+      en: "Barra de Santiago, San Francisco Menéndez",
+    },
+    meetingPoint: {
+      es: "Playa de Barra de Santiago, frente al malecón",
+      en: "Barra de Santiago beach, in front of the boardwalk",
+    },
+    highlights: {
+      es: [
+        "Tabla y clase para principiantes",
+        "Playa con oleaje constante todo el año",
+        "Tiempo libre en la playa al final",
+      ],
+      en: [
+        "Board and beginner lesson",
+        "Beach with consistent waves year-round",
+        "Free beach time afterward",
+      ],
+    },
+    includes: {
+      es: ["Guía certificado", "Tabla de surf", "Protector solar"],
+      en: ["Certified guide", "Surfboard", "Sunscreen"],
+    },
+    guideSlug: "douglas-pineda",
+  },
+  {
+    slug: "patrimonio-ahuachapan",
+    title: {
+      es: "Pasaje La Concordia y Parroquia de La Asunción",
+      en: "La Concordia Passage and La Asunción Parish",
+    },
+    shortDescription: {
+      es: "Caminata por el centro histórico de Ahuachapán: murales, plazas y más de cien años de historia.",
+      en: "A walk through downtown Ahuachapán: murals, plazas, and over a hundred years of history.",
+    },
+    description: {
+      es: "Recorremos el Pasaje La Concordia, un área peatonal con murales coloridos, hasta la Parroquia de La Asunción, una joya de arquitectura colonial con más de cien años. De paso, conocemos el Parque Francisco Menéndez y su monumento al General Morazán, y Reina cuenta la historia detrás del Día de los Farolitos, la fiesta patronal de la ciudad.",
+      en: "We walk through Pasaje La Concordia, a pedestrian area with colorful murals, to La Asunción Parish, a colonial architecture gem over a hundred years old. Along the way, we visit Parque Francisco Menéndez and its monument to General Morazán, and Reina tells the story behind the Day of the Lanterns, the city's patron saint festival.",
+    },
+    category: { es: "Patrimonio", en: "Heritage" },
+    categorySlug: "patrimonio",
+    city: { es: "Ahuachapán", en: "Ahuachapán" },
+    citySlug: "ahuachapan",
+    emoji: "⛪",
+    image: "/experiences/patrimonio-ahuachapan.jpg",
+    color: "sol",
+    priceUSD: 15,
+    durationHours: 2,
+    groupSizeMax: 10,
+    difficulty: "easy",
+    location: { es: "Ahuachapán", en: "Ahuachapán" },
+    meetingPoint: {
+      es: "Parque Francisco Menéndez, Ahuachapán centro",
+      en: "Parque Francisco Menéndez, downtown Ahuachapán",
+    },
+    highlights: {
+      es: [
+        "Murales del Pasaje La Concordia",
+        "Parroquia de La Asunción",
+        "Historia del Día de los Farolitos",
+      ],
+      en: [
+        "Pasaje La Concordia murals",
+        "La Asunción Parish",
+        "History of the Day of the Lanterns",
+      ],
+    },
+    includes: {
+      es: ["Guía certificado"],
+      en: ["Certified guide"],
+    },
+    guideSlug: "reina-perez",
+  },
 ];
 
 export const getExperienceBySlug = (slug: string) =>
